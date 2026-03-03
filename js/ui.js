@@ -366,35 +366,6 @@ const UI = {
       this.updateHeader();
     }
     
-    this.showPhaseCompleteModal(phaseId);
-  },
-
-  showPhaseCompleteModal(phaseId) {
-    const phase = PHASES[phaseId];
-    const medal = this.phaseMedalColors[phaseId] || { color: '#10B981', name: 'Complete', icon: '🏆' };
-    
-    const modal = document.getElementById('modal');
-    if (modal) {
-      modal.innerHTML = `
-        <div class="phase-complete-modal" onclick="UI.closeModal(event)">
-          <div class="phase-complete-content" onclick="event.stopPropagation()">
-            <div class="medal-circle" style="background: ${medal.color}">
-              <span class="medal-emoji">${medal.icon}</span>
-            </div>
-            <h2 class="phase-complete-title">Congratulations!</h2>
-            <p class="phase-complete-text">You've completed ${phase.icon} ${phase.title}</p>
-            <button class="btn btn-primary btn-large" onclick="UI.returnHomeFromModal()">
-              Back
-            </button>
-          </div>
-        </div>
-      `;
-      modal.classList.add('active');
-    }
-  },
-
-  returnHomeFromModal() {
-    this.closeModal();
     router.navigate('/');
   },
 
