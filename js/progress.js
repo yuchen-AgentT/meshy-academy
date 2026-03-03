@@ -2,7 +2,7 @@
 class ProgressManager {
   constructor() {
     this.storageKey = 'meshy_academy_progress';
-    this.version = '2.0';
+    this.version = '3.0';
     this.progress = this.load();
   }
 
