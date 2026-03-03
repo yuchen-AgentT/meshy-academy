@@ -107,6 +107,26 @@ class ProgressManager {
     return this.progress.unlockedPhases.includes(phaseId);
   }
 
+  isTutorialUnlocked(tutorialId, phaseId) {
+    const phase = PHASES[phaseId];
+    if (!phase) return false;
+    
+    const tutorialIndex = phase.tutorials.findIndex(t => t.id === tutorialId);
+    if (tutorialIndex === -1) return false;
+    
+    if (tutorialIndex === 0) {
+      return this.isPhaseUnlocked(phaseId);
+    }
+    
+    const prevTutorialId = phase.tutorials[tutorialIndex - 1].id;
+    return this.isCompleted(prevTutorialId);
+  }
+
+  isPhaseCompleted(phaseId) {
+    const progress = this.getPhaseProgress(phaseId);
+    return progress.total > 0 && progress.completed === progress.total;
+  }
+
   checkBadges() {
     Object.keys(PHASES).forEach(phaseId => {
       const progress = this.getPhaseProgress(phaseId);

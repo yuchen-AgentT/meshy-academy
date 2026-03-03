@@ -1,4 +1,12 @@
 const UI = {
+  phaseMedalColors: {
+    phase1: { color: '#CD7F32', name: 'Bronze', icon: '🥉' },
+    phase2: { color: '#C0C0C0', name: 'Silver', icon: '🥈' },
+    phase3: { color: '#9B59B6', name: 'Purple', icon: '💜' },
+    phase4: { color: '#FFD700', name: 'Gold', icon: '🥇' },
+    phase5: { color: '#E74C3C', name: 'Red', icon: '🔴' }
+  },
+
   renderHeader() {
     const points = progressManager.progress.totalPoints;
     const skillLevel = progressManager.progress.skillLevel;
@@ -125,13 +133,25 @@ const UI = {
       `;
     }
     
-    const tutorials = phase.tutorials.map(tutorial => {
+    const tutorials = phase.tutorials.map((tutorial, index) => {
       const isCompleted = progressManager.isCompleted(tutorial.id);
-      const statusClass = isCompleted ? 'tutorial-item completed' : 'tutorial-item';
-      const statusIcon = isCompleted ? '✅' : '📖';
+      const isTutorialUnlocked = progressManager.isTutorialUnlocked(tutorial.id, phaseId);
+      
+      let statusClass = 'tutorial-item';
+      let statusIcon = '📖';
+      let clickHandler = `onclick="UI.showTutorial('${tutorial.id}')"`;
+      
+      if (isCompleted) {
+        statusClass += ' completed';
+        statusIcon = '✅';
+      } else if (!isTutorialUnlocked) {
+        statusClass += ' locked';
+        statusIcon = '🔒';
+        clickHandler = '';
+      }
       
       return `
-        <div class="${statusClass}" onclick="UI.showTutorial('${tutorial.id}')">
+        <div class="${statusClass}" ${clickHandler}>
           <div class="tutorial-status">${statusIcon}</div>
           <div class="tutorial-info">
             <span class="tutorial-ep">${tutorial.shortTitle}</span>
@@ -309,10 +329,13 @@ const UI = {
 
   goToNextTutorial(currentId, nextId) {
     let tutorial = null;
-    for (const phaseId of Object.keys(PHASES)) {
-      const found = PHASES[phaseId].tutorials.find(t => t.id === currentId);
+    let phaseId = null;
+    
+    for (const pid of Object.keys(PHASES)) {
+      const found = PHASES[pid].tutorials.find(t => t.id === currentId);
       if (found) {
         tutorial = found;
+        phaseId = pid;
         break;
       }
     }
@@ -322,7 +345,11 @@ const UI = {
       this.updateHeader();
     }
     
-    router.navigate(`/tutorial/${nextId}`);
+    if (phaseId && progressManager.isPhaseCompleted(phaseId)) {
+      this.showPhaseCompleteModal(phaseId);
+    } else {
+      router.navigate(`/tutorial/${nextId}`);
+    }
   },
 
   completeAndReturn(tutorialId, phaseId) {
@@ -340,7 +367,49 @@ const UI = {
       this.updateHeader();
     }
     
-    router.navigate(`/phase/${phaseId}`);
+    if (progressManager.isPhaseCompleted(phaseId)) {
+      this.showPhaseCompleteModal(phaseId);
+    } else {
+      router.navigate(`/phase/${phaseId}`);
+    }
+  },
+
+  showPhaseCompleteModal(phaseId) {
+    const phase = PHASES[phaseId];
+    const medal = this.phaseMedalColors[phaseId] || { color: '#10B981', name: 'Complete', icon: '🏆' };
+    
+    const modal = document.getElementById('modal');
+    if (modal) {
+      modal.innerHTML = `
+        <div class="phase-complete-modal" onclick="UI.closeModal(event)">
+          <div class="phase-complete-content" onclick="event.stopPropagation()">
+            <div class="medal-container">
+              <div class="medal" style="--medal-color: ${medal.color}">
+                <div class="medal-outer"></div>
+                <div class="medal-inner">
+                  <span class="medal-icon">${medal.icon}</span>
+                </div>
+                <div class="medal-ribbon left"></div>
+                <div class="medal-ribbon right"></div>
+              </div>
+            </div>
+            <h2 class="phase-complete-title">Congratulations!</h2>
+            <p class="phase-complete-subtitle">You've completed</p>
+            <p class="phase-complete-phase">${phase.icon} ${phase.title}</p>
+            <p class="phase-complete-medal">You earned the ${medal.name} Medal!</p>
+            <button class="btn btn-primary btn-large" onclick="UI.returnHomeFromModal()">
+              Back to Home
+            </button>
+          </div>
+        </div>
+      `;
+      modal.classList.add('active');
+    }
+  },
+
+  returnHomeFromModal() {
+    this.closeModal();
+    router.navigate('/');
   },
 
   renderAchievements() {
