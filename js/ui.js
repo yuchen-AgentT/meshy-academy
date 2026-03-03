@@ -10,25 +10,29 @@ const UI = {
   renderHeader() {
     const points = progressManager.progress.totalPoints;
     const skillLevel = progressManager.progress.skillLevel;
+    const langLabel = i18n.getCurrentLangLabel();
     
     return `
       <header class="header">
         <div class="logo">
           <span class="logo-icon">🎓</span>
-          <span class="logo-text">Meshy Academy</span>
+          <span class="logo-text">${i18n.t('logoText')}</span>
         </div>
         <div class="stats">
           <div class="stat">
             <span class="stat-icon">⭐</span>
             <span class="stat-value">${points}</span>
-            <span class="stat-label">Points</span>
+            <span class="stat-label">${i18n.t('points')}</span>
           </div>
           <div class="stat">
             <span class="stat-icon">📊</span>
             <span class="stat-value">${skillLevel}</span>
-            <span class="stat-label">Skill</span>
+            <span class="stat-label">${i18n.t('skill')}</span>
           </div>
-          <button class="btn btn-icon" onclick="UI.showAchievements()" title="Achievements">
+          <button class="btn btn-lang" onclick="i18n.toggleLang()" title="Switch Language">
+            ${langLabel}
+          </button>
+          <button class="btn btn-icon" onclick="UI.showAchievements()" title="${i18n.t('achievements')}">
             🏆
           </button>
         </div>
@@ -50,13 +54,13 @@ const UI = {
       statusContent = `
         <div class="phase-status">
           <span class="lock-icon">🔒</span>
-          <span class="lock-text">Complete ${phase.unlockRequirement} tutorials to unlock</span>
+          <span class="lock-text">${i18n.t('completeTutorialsToUnlock', {n: phase.unlockRequirement})}</span>
         </div>
       `;
     } else if (progress.total === 0) {
       statusContent = `
         <div class="phase-status">
-          <span class="coming-soon">Coming Soon</span>
+          <span class="coming-soon">${i18n.t('comingSoon')}</span>
         </div>
       `;
     } else {
@@ -97,12 +101,12 @@ const UI = {
           ${phaseCards}
         </div>
         <div class="total-progress">
-          <h3 class="total-progress-title">Overall Progress</h3>
+          <h3 class="total-progress-title">${i18n.t('overallProgress')}</h3>
           <div class="progress-bar progress-bar-large">
             <div class="progress-fill" style="width: ${totalProgress.percentage}%"></div>
           </div>
           <p class="total-progress-text">
-            ${totalProgress.completed} / ${totalProgress.total} tutorials completed (${totalProgress.percentage}%)
+            ${totalProgress.completed} / ${totalProgress.total} ${i18n.t('tutorialsCompleted')} (${totalProgress.percentage}%)
           </p>
         </div>
       </div>
@@ -118,8 +122,8 @@ const UI = {
       return `
         <div class="locked-message">
           <span class="lock-icon-large">🔒</span>
-          <p>This phase is locked</p>
-          <p class="hint">Complete ${phase.unlockRequirement} tutorials to unlock</p>
+          <p>${i18n.t('thisPhaseIsLocked')}</p>
+          <p class="hint">${i18n.t('completeTutorialsToUnlock', {n: phase.unlockRequirement})}</p>
         </div>
       `;
     }
@@ -128,7 +132,7 @@ const UI = {
       return `
         <div class="empty-state">
           <span class="empty-icon">📚</span>
-          <p>Tutorials coming soon</p>
+          <p>${i18n.t('tutorialsComingSoon')}</p>
         </div>
       `;
     }
@@ -156,11 +160,11 @@ const UI = {
           <div class="tutorial-info">
             <span class="tutorial-ep">${tutorial.shortTitle}</span>
             <h4 class="tutorial-title">${tutorial.title}</h4>
-            <p class="tutorial-author">Author: ${tutorial.author}</p>
+            <p class="tutorial-author">${i18n.t('author')}: ${tutorial.author}</p>
           </div>
           <div class="tutorial-points">
             <span class="points-value">${tutorial.points}</span>
-            <span class="points-label">Points</span>
+            <span class="points-label">${i18n.t('points')}</span>
           </div>
         </div>
       `;
@@ -169,7 +173,7 @@ const UI = {
     return `
       <div class="tutorial-list">
         <div class="tutorial-list-header">
-          <button class="btn btn-back" onclick="UI.showHome()">← Back</button>
+          <button class="btn btn-back" onclick="UI.showHome()">← ${i18n.t('back')}</button>
           <h2 class="phase-title-large">${phase.icon} ${phase.title}</h2>
           <p class="phase-subtitle-large">${phase.subtitle}</p>
         </div>
@@ -233,7 +237,7 @@ const UI = {
     
     let statusBadge = '';
     if (isCompleted) {
-      statusBadge = `<span class="status-badge completed">✅ Completed</span>`;
+      statusBadge = `<span class="status-badge completed">✅ ${i18n.t('completed')}</span>`;
     }
     
     let faqSection = '';
@@ -253,7 +257,7 @@ const UI = {
       
       faqSection = `
         <div class="faq-section">
-          <h3 class="faq-title">FAQ</h3>
+          <h3 class="faq-title">${i18n.t('faq')}</h3>
           ${faqItems}
         </div>
       `;
@@ -266,7 +270,7 @@ const UI = {
         <button class="btn btn-nav btn-prev" onclick="UI.navigateToTutorial('${adjacent.prev.id}')">
           <span class="nav-arrow">←</span>
           <span class="nav-text">
-            <span class="nav-label">Previous</span>
+            <span class="nav-label">${i18n.t('previous')}</span>
             <span class="nav-title">${adjacent.prev.shortTitle}</span>
           </span>
         </button>
@@ -279,7 +283,7 @@ const UI = {
       navButtons += `
         <button class="btn btn-nav btn-next" onclick="UI.goToNextTutorial('${tutorialId}', '${adjacent.next.id}')">
           <span class="nav-text">
-            <span class="nav-label">Next</span>
+            <span class="nav-label">${i18n.t('next')}</span>
             <span class="nav-title">${adjacent.next.shortTitle}</span>
           </span>
           <span class="nav-arrow">→</span>
@@ -289,7 +293,7 @@ const UI = {
       navButtons += `
         <button class="btn btn-nav btn-next" onclick="UI.completePhase('${tutorialId}', '${phaseId}')">
           <span class="nav-text">
-            <span class="nav-label">Complete Phase</span>
+            <span class="nav-label">${i18n.t('completePhase')}</span>
             <span class="nav-title">${phase.icon} ${phase.title}</span>
           </span>
           <span class="nav-arrow">✓</span>
@@ -302,7 +306,7 @@ const UI = {
     return `
       <div class="tutorial">
         <div class="tutorial-header">
-          <button class="btn btn-back" onclick="UI.showPhase('${phaseId}')">← Back</button>
+          <button class="btn btn-back" onclick="UI.showPhase('${phaseId}')">← ${i18n.t('back')}</button>
           <div class="tutorial-meta">
             <span class="tutorial-phase">${phase.icon} ${phase.title}</span>
             ${statusBadge}
@@ -312,7 +316,7 @@ const UI = {
         <article class="tutorial-content">
           <div class="tutorial-short-title">${tutorial.shortTitle}</div>
           <h1 class="tutorial-main-title">${tutorial.title}</h1>
-          <p class="tutorial-author-line">Author: ${tutorial.author}</p>
+          <p class="tutorial-author-line">${i18n.t('author')}: ${tutorial.author}</p>
           
           <div class="tutorial-body">
             ${tutorial.content}
@@ -395,24 +399,24 @@ const UI = {
         <div class="achievements-content" onclick="event.stopPropagation()">
           <button class="btn btn-close" onclick="UI.closeModal()">✕</button>
           
-          <h2 class="achievements-title">🏆 Achievements</h2>
+          <h2 class="achievements-title">🏆 ${i18n.t('achievements')}</h2>
           
           <div class="achievements-stats">
             <div class="stat-card">
               <span class="stat-number">${earnedCount}/${totalCount}</span>
-              <span class="stat-desc">Badges</span>
+              <span class="stat-desc">${i18n.t('badges')}</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${completedTutorials}</span>
-              <span class="stat-desc">Completed</span>
+              <span class="stat-desc">${i18n.t('completed')}</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${totalPoints}</span>
-              <span class="stat-desc">Points</span>
+              <span class="stat-desc">${i18n.t('totalPoints')}</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${skillLevel}</span>
-              <span class="stat-desc">Skill Level</span>
+              <span class="stat-desc">${i18n.t('skillLevel')}</span>
             </div>
           </div>
           
@@ -489,6 +493,14 @@ const UI = {
     const answer = document.getElementById(`faq-${index}`);
     if (answer) {
       answer.classList.toggle('open');
+    }
+  },
+
+  refresh() {
+    this.updateHeader();
+    const mainContent = document.getElementById('main-content');
+    if (mainContent && router) {
+      router.handleRoute();
     }
   }
 };

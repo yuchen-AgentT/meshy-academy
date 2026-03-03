@@ -638,11 +638,31 @@
 }
 
 .btn-icon {
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  padding: 8px 12px;
+  font-size: 20px;
   background: var(--bg-card);
-  font-size: 18px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-lang {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 60px;
+}
+
+.btn-lang:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
 }
 
 .btn-icon:hover {

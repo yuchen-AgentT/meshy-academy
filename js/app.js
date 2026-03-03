@@ -1,5 +1,6 @@
 // js/app.js
 function initApp() {
+  i18n.init();
   router.register('/', renderHomePage);
   router.register('/phase/:phaseId', renderPhasePage);
   router.register('/tutorial/:tutorialId', renderTutorialPage);
