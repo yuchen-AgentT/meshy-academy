@@ -2,6 +2,7 @@ class Router {
   constructor() {
     this.routes = {};
     this.currentRoute = null;
+    this.basePath = '/meshy-academy';
     
     window.addEventListener('popstate', () => this.handleRoute());
     
@@ -19,13 +20,38 @@ class Router {
   }
 
   navigate(path) {
-    history.pushState(null, null, path);
+    const fullPath = this.basePath + path;
+    history.pushState(null, null, fullPath);
     this.handleRoute();
   }
 
   handleRoute() {
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
-    const handler = this.routes[path] || this.routes['/'];
+    let path = window.location.pathname;
+    
+    if (path.startsWith(this.basePath)) {
+      path = path.slice(this.basePath.length) || '/';
+    }
+    
+    path = path.replace(/\/$/, '') || '/';
+    
+    let handler = this.routes[path];
+    
+    if (!handler) {
+      for (const route of Object.keys(this.routes)) {
+        if (route.includes(':')) {
+          const routeRegex = new RegExp('^' + route.replace(/:[^/]+/g, '([^/]+)') + '$');
+          const match = path.match(routeRegex);
+          if (match) {
+            handler = this.routes[route];
+            break;
+          }
+        }
+      }
+    }
+    
+    if (!handler) {
+      handler = this.routes['/'];
+    }
     
     if (handler) {
       handler();
