@@ -2,6 +2,7 @@
 class ProgressManager {
   constructor() {
     this.storageKey = 'meshy_academy_progress';
+    this.version = '2.0';
     this.progress = this.load();
   }
 
@@ -9,12 +10,22 @@ class ProgressManager {
     try {
       const saved = localStorage.getItem(this.storageKey);
       if (saved) {
-        return JSON.parse(saved);
+        const data = JSON.parse(saved);
+        if (data.version !== this.version) {
+          console.log('Version mismatch, resetting progress');
+          return this.getDefaultProgress();
+        }
+        return data;
       }
     } catch (e) {
       console.warn('Failed to load progress:', e);
     }
+    return this.getDefaultProgress();
+  }
+
+  getDefaultProgress() {
     return {
+      version: this.version,
       totalPoints: 0,
       skillLevel: 0,
       completedTutorials: [],
@@ -25,6 +36,7 @@ class ProgressManager {
   }
 
   save() {
+    this.progress.version = this.version;
     localStorage.setItem(this.storageKey, JSON.stringify(this.progress));
   }
 
