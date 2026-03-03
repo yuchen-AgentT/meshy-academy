@@ -519,8 +519,37 @@ const PHASES = {
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: 'PLA 适合什么场景？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last updated: Feb 2026</p>
+          <p>If 3D printing filaments were a royal family, PLA would be the beloved king that everyone loves. It's forgiving, affordable, and won't fill your house with chemical fumes.</p>
+          <p>For beginners—especially those printing their first Meshy-generated model — <strong>PLA Basic or PLA Matte</strong> would be your best friend.</p>
+          
+          <h2>Which PLA finish should I choose: Basic or Matte?</h2>
+          <ul>
+            <li><strong>Basic PLA</strong>: Glossy, shiny finish that makes colors pop. Trade-off: visible layer lines can give prints a "cheap plastic" look.</li>
+            <li><strong>Matte PLA</strong>: Hides layer lines beautifully with a clay-like, non-reflective surface. Community favorite for figurines and display pieces.</li>
+          </ul>
+          <p><strong>Quick rule of thumb</strong>: if your model has lots of fine detail (like a Meshy figurine), go Matte. If you want vivid, eye-catching color, go Basic.</p>
+          
+          <h2>Why should beginners start with PLA Basic & Matte?</h2>
+          <ul>
+            <li><strong>Easiest to print</strong>: Nozzle temp of 190–220°C, minimal warping, and better overhang performance than almost any other material.</li>
+            <li><strong>Pleasant to work with</strong>: Unlike ABS, PLA gives off a faint, sweet aroma — almost like waffles. Always ventilate your space, though.</li>
+            <li><strong>Widest availability</strong>: Basic and Matte PLA are stocked by every major brand in dozens of colors, making them easy to source anywhere.</li>
+          </ul>
+          
+          <h2>What are PLA Basic & Matte's biggest weaknesses?</h2>
+          <ul>
+            <li><strong>Brittle under impact</strong> — Can snap under stress. Avoid using it for functional gears or load-bearing parts.</li>
+            <li><strong>Softens at ~60°C</strong> — PLA's glass transition temperature is around 60°C. A print left in a hot car will deform. For heat-exposed parts, consider PETG.</li>
+            <li><strong>Not ideal for outdoor use</strong> — PLA degrades under prolonged UV exposure. For outdoor projects, also switch to PETG.</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Can I paint or post-process PLA Basic and Matte prints?', a: 'Yes. PLA Matte takes paint particularly well due to its non-glossy surface. PLA Basic benefits from light sanding before painting to improve adhesion.' },
+          { q: 'How should I store PLA filament?', a: 'Keep it sealed with silica gel packets. Moisture-absorbed PLA causes popping, stringing, and rough surfaces. A dry box is a worthwhile investment.' },
+          { q: 'Is PLA environmentally friendly?', a: 'PLA is made from renewable resources like corn starch and is industrially compostable. However, it won\'t break down in a home compost bin or typical landfill within a normal timeframe.' }
+        ]
       },
       {
         id: 'phase3-ep02',
@@ -528,8 +557,44 @@ const PHASES = {
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '特殊 PLA 如何打印？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>You've mastered PLA Basic and Matte. Now you want your Meshy models to look like metal, stone, or magic. Welcome to <strong>specialty PLA</strong> — standard PLA mixed with additives that change how prints look and feel. Each type has quirks, though. You shouldn't just use your standard profile and expect a banger.</p>
+          
+          <h2>1. How do I print Silk PLA for a metallic finish?</h2>
+          <p>Silk PLA has a gorgeous metallic sheen that makes prints look like polished treasure. Though it's also the weakest PLA variant. The shiny additives ruin layer-to-layer bonding.</p>
+          <ul>
+            <li><strong>Temperature</strong>: Print at 215–230°C for maximum gloss (hotter than standard PLA).</li>
+            <li><strong>Flow Trick</strong>: Lower your flow rate to 0.90 or 0.95 to prevent bloating.</li>
+            <li><strong>Speed Limit</strong>: Slow down your outer walls to 30–40mm/s for maximum bling. High speeds disturb the polymer alignment and turn the finish matte.</li>
+            <li><strong>Cooling Fan</strong>: 30–50%. Too much cooling also dulls the finish.</li>
+          </ul>
+          
+          <h2>2. How do I get that natural stone look with Marble PLA?</h2>
+          <p>Marble PLA is usually a white or grey PLA with tiny black specks suspended in it. The variegated texture hides layer lines and makes prints look like solid plaster.</p>
+          <p><strong>The Risk</strong>: Most "Marble" PLA uses colored plastic specks, but some also use real rock powder. Check before you buy. If it contains real stone, use a 0.6mm nozzle to prevent clogs. Pigment-only versions work fine at 0.4mm.</p>
+          
+          <h2>3. How do I get the best results with Wood PLA?</h2>
+          <p>Wood filament is PLA mixed with 30–40% wood dust. It smells like a woodshop when printing and can be sanded, stained, and varnished like real timber.</p>
+          <ul>
+            <li><strong>Temp Trick</strong>: Higher temperature = darker "burn" marks for wood grain effect. Print at 190°C for a light pine look, or 230°C for a dark mahogany look.</li>
+            <li><strong>Nozzle Requirement</strong>: A 0.6mm nozzle is strongly recommended. 0.4mm nozzle will easily get clogged. 0.2mm nozzle is not compatible.</li>
+            <li><strong>Don't Let it Cook</strong>: Unload Wood PLA immediately after printing. Otherwise, it will carbonize and permanently block your hotend.</li>
+          </ul>
+          
+          <h2>4. What should I know before printing Glow-in-the-Dark PLA?</h2>
+          <p>Glow filament is best for ghosts, magic items, and sci-fi accessories. It looks cool in the dark, but it's also abrasive. Those phosphorescent particles are basically tiny sandpaper bits running through your printer.</p>
+          <ul>
+            <li>A hardened steel nozzle is required when printing. Stainless steel nozzles are not compatible. 0.2mm nozzles are not compatible.</li>
+            <li>AMS 2 Pro, AMS HT & AMS are compatible, but can lead to faster wear. AMS Lite is not compatible.</li>
+            <li>Expose to light for 5-10 minutes for maximum glow.</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Can I mix specialty PLA with regular PLA in a multi-color print?', a: 'Yes, but use the specialty filament\'s settings for the whole print to avoid quality issues between material transitions.' },
+          { q: 'Do specialty filaments need special storage?', a: 'Yes — especially Wood and Silk PLA, which absorb moisture faster than standard PLA. Seal with desiccant and dry before use.' },
+          { q: 'Are specialty PLA filaments safe for food contact?', a: 'No. Additives like wood dust and glow particles make them unsuitable for food use. Display items only.' }
+        ]
       },
       {
         id: 'phase3-ep03',
@@ -537,8 +602,32 @@ const PHASES = {
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '什么时候应该用 PETG？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Your Meshy model looks amazing, but you want it on your car dashboard or use it as a garden planter. PLA's glass transition is only 60°C — one hot afternoon turns it into a sad puddle.</p>
+          <p>Time to level up to <strong>PETG</strong> — the material that laughs at heat.</p>
+          
+          <h2>What is PETG and why is it called "the best of both worlds"?</h2>
+          <p>Think of PETG as PLA's tougher, more athletic sibling. It combines PLA's ease of printing with engineering-grade durability:</p>
+          <ul>
+            <li><strong>Heat resistant</strong>: PETG's glass transition is 81°C — a 21°C advantage over PLA. Car accessories and outdoor decor will stay solid.</li>
+            <li><strong>Flexible strength</strong>: Unlike brittle PLA, PETG bends before it breaks.</li>
+            <li><strong>No toxic fumes</strong>: Low odor and safe for home printing.</li>
+          </ul>
+          
+          <h2>What problems should I expect when printing PETG?</h2>
+          <ul>
+            <li><strong>It's stringy (the "Spiderweb Effect")</strong>: PETG flows like honey and leaves thin strings between parts. Increase retraction speed and distance slightly compared to your PLA settings.</li>
+            <li><strong>It's a moisture magnet</strong>: PETG absorbs humidity like a sponge — roughly 0.3% by weight — causing popping sounds while printing and rough surfaces. Always dry PETG before first use.</li>
+            <li><strong>It sticks too well</strong>: PETG can fuse permanently to glass and smooth PEI sheets. Use a glue stick or hairspray as a release agent — it creates a barrier so prints pop off safely.</li>
+          </ul>
+          <p><strong>Meshy Pro-Tip</strong>: PETG and PLA don't stick to each other, so you can't combine them in a multi-color print expecting a strong bond. Flip side: this makes them useful as breakaway support material for each other in dual-extruder setups.</p>
+        `,
+        faq: [
+          { q: 'Is PETG food-safe?', a: 'PETG itself is FDA-approved, but 3D printed PETG isn\'t truly food-safe — micro-gaps between layers harbor bacteria. Apply a food-safe epoxy coating for food use.' },
+          { q: 'Can I print PETG without an enclosure?', a: 'Yes. Unlike ABS, PETG doesn\'t warp badly and produces minimal fumes. An enclosure is optional but helps with temperature consistency on large prints.' },
+          { q: 'Is PETG recyclable?', a: 'PETG carries the #1 recycling code and is technically recyclable, but most curbside programs don\'t accept 3D prints. Collect scraps for specialist recycling services.' }
+        ]
       },
       {
         id: 'phase3-ep04',
@@ -546,8 +635,40 @@ const PHASES = {
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何干燥耗材？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Here's a plot twist most beginners don't see coming: <strong>All 3D printing filaments absorb moisture from the air</strong>. Your filament can get "wet" just by sitting on your desk.</p>
+          <p>Wet filament is your #1 enemy. It's like trying to cook with soggy pasta—technically possible, but the results will be sad.</p>
+          
+          <h2>How do I know if my filament is wet?</h2>
+          <ul>
+            <li><strong>Stringing</strong>: Thin strings and wisps between parts that weren't there before — the most visible sign of moisture damage.</li>
+            <li><strong>Popping/Crackling Sounds</strong>: That's literally water boiling into steam inside the nozzle. Especially noticeable with transparent filaments, where you can see tiny bubbles forming.</li>
+            <li><strong>The "Acne" Look</strong>: Random bumps, tiny holes, or fuzzy textures on the surface.</li>
+            <li><strong>Poor layer adhesion</strong>: Layers don't bond properly and parts break easily.</li>
+          </ul>
+          <p><strong>Meshy Pro-Tip — The "Snap" Test</strong>: Bend the end of your PLA filament 90 degrees. Dry PLA bends with resistance and springs back. Wet PLA snaps instantly like a dry twig. If it snaps — dry it immediately.</p>
+          
+          <h2>What's the best way to dry filament?</h2>
+          <ul>
+            <li><strong>Filament Dryer (Recommended)</strong>: Dedicated dryers maintain precise temps. Set the temperature, wait a few hours, and done.</li>
+            <li><strong>Heated bed method</strong>: Place the spool on the print bed and heat it to the target temperature. Works well on enclosed printers — open-frame printers can't retain enough heat for this method.</li>
+            <li><strong>Food Dehydrator</strong>: Works great if it reaches the specific temperatures needed. Never leave it unattended, ensure low-temperature operation, and avoid placing filament near surfaces that contact food.</li>
+            <li><strong>Oven (Danger Zone)</strong>: Home ovens have poor temp control. A spike above the glass transition temp will melt your spool into a plastic donut.</li>
+          </ul>
+          
+          <h2>How do I prevent moisture damage in the first place?</h2>
+          <ul>
+            <li><strong>Seal it</strong>: Store filaments in airtight bags or containers with silica gel (desiccant) packets. This is the single most effective thing you can do.</li>
+            <li><strong>Don't leave it out</strong>: Unload and bag up your filament after each print session.</li>
+            <li><strong>Climate check</strong>: In humid climates (>60% RH), consider drying filaments before every print.</li>
+            <li><strong>Monitor humidity</strong>: Place a hygrometer in your storage container. Aim for below 20% RH.</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Can I "over-dry" filament?', a: 'Not really, as long as you stay below the glass transition temperature. Excessive heat will warp the spool or fuse coils together — always stick to the recommended temps.' },
+          { q: 'Are vacuum-sealed new filaments already dry?', a: 'Usually yes, but quality varies by brand. If the silica gel packet inside the bag has turned pink, the filament may have absorbed moisture during shipping. Dry it before first use to be safe.' }
+        ]
       },
       {
         id: 'phase3-ep05',
@@ -555,8 +676,38 @@ const PHASES = {
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何减少打印浪费？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Let's be real: 3D printing creates waste. Failed prints, support structures, test pieces — they add up. According to industry data, roughly <strong>33% of all filament used ends up as waste</strong>. But you can still print responsibly without sacrificing quality or fun.</p>
+          
+          <h2>Is PLA really eco-friendly?</h2>
+          <p>PLA is plant-based (corn starch / sugarcane), which sounds great. But here's the truth:</p>
+          <ul>
+            <li>PLA only biodegrades under industrial composting conditions (60°C+ with specific microbes).</li>
+            <li>In a landfill or your backyard, it acts just like regular plastic for decades.</li>
+          </ul>
+          <p>So PLA is better than petroleum-based plastics, but it's not a magic guilt-free material. Responsible habits still matter.</p>
+          
+          <h2>What are the simplest ways to reduce printing waste?</h2>
+          <ul>
+            <li><strong>Optimize infill</strong>: Meshy models are usually for display, not structural stress. Standard parts use 15–20% infill, but for Meshy figurines, 5–10% is usually plenty — based on our testing, this saves up to 40% material with no visible difference.</li>
+            <li><strong>Choose recycled filament</strong>: Brands like Polymaker, eSun, and Filamentive sell "rPLA" — made from recycled factory waste. It prints identically to virgin PLA with a smaller carbon footprint.</li>
+            <li><strong>Nail your settings first</strong>: Print a small test piece before committing to a 12-hour print. One calibration run can prevent a whole spool of wasted plastic.</li>
+          </ul>
+          
+          <h2>What should I do with scraps and failed prints?</h2>
+          <p>Most curbside recycling bins DO NOT accept 3D prints because they lack the recycling code symbols. Here are your options:</p>
+          <ul>
+            <li><strong>Specialist services</strong>: Collect scraps and mail them to recyclers like Printerior (US) or Recycling Fabrik (EU).</li>
+            <li><strong>Creative upcycling</strong>: Melt scraps into silicone molds for coasters, or use them for mosaic art.</li>
+            <li><strong>Filament extruder</strong>: You can buy a filament extruder that grinds your scraps and melts them back into new filament spool. These machines are expensive and tricky to master. But for hardcore makers, it's the ultimate recycling dream.</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Can I recycle PLA with regular household recycling?', a: 'No. PLA lacks the standard recycling code symbols that sorting facilities recognize. Collect 3D printing scraps separately and use a specialist recycling service.' },
+          { q: 'Is recycled filament (rPLA) lower quality than regular PLA?', a: 'No. Modern rPLA prints at the same temperatures (190–215°C) and delivers identical surface quality. You won\'t notice a difference.' },
+          { q: 'Does reducing infill weaken my display prints?', a: 'For figurines and display models, no. Even 10% infill with 3–4 wall lines provides plenty of strength for shelf display. Only increase infill for functional, load-bearing parts.' }
+        ]
       }
     ]
   },
@@ -573,8 +724,35 @@ const PHASES = {
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '什么是切片？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          
+          <h2>Why can't I print a 3D model file directly?</h2>
+          <p>Before your 3D printer can start printing, it needs instructions. That's where <strong>slicing</strong> comes in—it acts as the bridge between digital art and physical reality.</p>
+          <p>Technically, a slicer takes your 3D model (usually an .STL or .3MF file) and divides it into thousands of thin horizontal layers. It then generates a G-code file—a set of commands controlling coordinates, speeds, and temperatures that tells the printer exactly what to do.</p>
+          <p>In short, slicing is like preparing a recipe. It tells the machine exactly how to "cook" your model. This step is crucial: the choices you make here define the print time, material usage, and structural integrity of your final masterpiece.</p>
+          
+          <h2>What is G-Code?</h2>
+          <p>Simply put, G-code is the blueprint that tells your 3D printer exactly how to bring a digital model to life. It guides every specific movement and action, primarily controlling:</p>
+          <ul>
+            <li><strong>Print Path</strong>: The exact route the nozzle follows layer by layer.</li>
+            <li><strong>Speed</strong>: The pace of printing to balance efficiency and precision.</li>
+            <li><strong>Temperature</strong>: The heat level of the nozzle and bed for smooth material flow.</li>
+          </ul>
+          
+          <h2>The Slicing Workflow: What are the steps to turn a 3D model into G-code?</h2>
+          <ol>
+            <li><strong>Step 1: Import & Check</strong> - First, import your 3D model (STL, OBJ, or 3MF) into the slicer. The slicer will automatically check for geometry issues—such as holes or non-manifold edges—to ensure the model is solid and printable.</li>
+            <li><strong>Step 2: Orientation & Supports</strong> - Ensure the model is flat on the plate for stability. Use Slicer's support generation tools to handle complex overhangs if needed.</li>
+            <li><strong>Step 3: G-Code Generation</strong> - Once settings are finalized, click "Slice". This action converts the digital mesh into machine instructions (G-code). The software calculates the precise path for the nozzle, defining the Perimeters (outer walls) and Infill (internal structure) for every single layer.</li>
+            <li><strong>Step 4: Preview & Verify (Line Type)</strong> - Before printing, switch the view to Line Type to inspect the actual toolpaths. This mode color-codes the model's structure—distinguishing Outer Walls, Infill, and Overhangs. Use the vertical slider to scrub through the layers and check the inside of the model.</li>
+          </ol>
+          <p>You now have the "blueprint" ready for your machine!</p>
+        `,
+        faq: [
+          { q: 'What is the difference between an STL file and G-code?', a: 'An STL file represents only the 3D shape (geometry), while G-code contains the specific instructions for your printer. The printer cannot read an STL directly; it needs the G-code to know exactly where to move the nozzle, how fast to print, and what temperature to use for each layer.' },
+          { q: 'Why should I check the "Line Type" preview before printing?', a: 'The standard 3D view only shows the outer shell, hiding potential internal errors. The "Line Type" preview reveals the actual path the nozzle will take. Checking this allows you to spot unsupported overhangs, hollow gaps, or missing infill that would cause the print to collapse.' }
+        ]
       },
       {
         id: 'phase4-ep02',
@@ -582,8 +760,55 @@ const PHASES = {
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何优化切片设置？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Profile tuning isn't about chasing a single "perfect" setting—it's about making deliberate trade-offs based on your goal. Default slicer profiles are a solid starting point, but fine-tuning is what truly unlocks your printer's potential.</p>
+          <p><strong>Bottom line</strong>: There is no universally "best" profile—only the one that best fits your use case.</p>
+          
+          <h2>What layer height should you use for your 3D print?</h2>
+          <p>Layer height has the biggest impact on both surface quality and print time.</p>
+          <ul>
+            <li><strong>Extra Fine & Fine (0.08 & 0.12 mm)</strong>: Ideal for miniatures and highly detailed surfaces where layer lines must be nearly invisible.</li>
+            <li><strong>Balanced Quality (0.16 mm)</strong>: The recommended default—an excellent balance between detail and efficiency.</li>
+            <li><strong>Balanced Strength (0.20 & 0.24 mm)</strong>: Best for functional parts and large models, prioritizing strength and faster prints.</li>
+          </ul>
+          
+          <h2>Pro Tip: Variable Layer Height</h2>
+          <p>Variable Layer Height lets the slicer use different layer thicknesses in different parts of a model instead of one fixed layer height. This lets you improve surface quality without significantly increasing total print time.</p>
+          <ul>
+            <li>Uses thinner layers on curves and slopes → smoother surface</li>
+            <li>Uses thicker layers on flat areas → faster printing</li>
+          </ul>
+          
+          <h2>How to choose infill density and pattern?</h2>
+          <p>Infill defines internal strength, material usage, and print time.</p>
+          <ul>
+            <li><strong>Functional parts</strong>: 20–40% density</li>
+            <li><strong>Visual models/prototypes</strong>: 10–15% density</li>
+            <li><strong>Infill Overlap</strong>: Set 10–30% to ensure strong bonding between infill and walls.</li>
+          </ul>
+          
+          <h2>What wall count and thickness work best?</h2>
+          <p>Walls often contribute more to strength than infill.</p>
+          <ul>
+            <li><strong>Decorative models</strong>: 1-2 walls to save time and material</li>
+            <li><strong>Standard</strong>: 2-3 walls</li>
+            <li><strong>Functional prints</strong>: 4-5 walls for brackets or tools</li>
+          </ul>
+          <p>Set wall thickness as a multiple of your nozzle diameter. With a 0.4 mm nozzle, use at least 0.8 mm (2 lines).</p>
+          
+          <h2>Which nozzle size should you use?</h2>
+          <ul>
+            <li><strong>0.2 mm</strong>: Ultra-fine details (miniatures, jewelry), but slow and clog-prone</li>
+            <li><strong>0.4 mm</strong>: The all-rounder—balanced speed, detail, and reliability</li>
+            <li><strong>0.6 mm</strong>: Faster prints, stronger parts, better for flexible materials</li>
+            <li><strong>0.8 mm</strong>: Excellent for large prototypes and structural parts</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Should I use 100% infill for maximum strength?', a: 'No. Increasing Wall Count is more effective. 3–4 walls with 20% infill is often stronger and faster than 2 walls with 100% infill.' },
+          { q: 'When should I use Variable Layer Height?', a: 'Use it for curved or sloping tops (like domes) to smooth surfaces. For vertical or mechanical parts, a fixed layer height ensures a more consistent finish and faster slicing.' }
+        ]
       },
       {
         id: 'phase4-ep03',
@@ -591,8 +816,57 @@ const PHASES = {
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何添加支撑？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          
+          <h2>Why do 3D printers need supports?</h2>
+          <p>3D printers—specifically FDM machines—have one weakness: they cannot print on thin air. Since printers build layer by layer from the bottom up, any part of your model that hangs in empty space will collapse into a mess of "spaghetti" without help.</p>
+          <p>Supports are temporary "scaffolding" that holds up the overhanging parts of your model while it prints.</p>
+          
+          <h2>The "YHT" Rule</h2>
+          <ul>
+            <li><strong>The "Y" Shape</strong>: Requires no support because its gradual slopes (45° or steeper) allow each layer to overlap securely.</li>
+            <li><strong>The "H" Shape</strong>: Utilizes "bridging" to span short gaps successfully without support, but requires support for longer distances.</li>
+            <li><strong>The "T" Shape</strong>: Must have support because FDM printers cannot deposit material in mid-air.</li>
+          </ul>
+          
+          <h2>Tree vs Normal Supports</h2>
+          <p><strong>Tree Supports</strong>: Grow like tree branches, wrapping around the model to touch only necessary points.</p>
+          <ul>
+            <li>Pros: Less material, faster printing, easy removal, minimal scarring</li>
+            <li>Best for: Organic shapes like characters and miniatures</li>
+          </ul>
+          <p><strong>Normal Supports</strong>: Build straight vertical pillars.</p>
+          <ul>
+            <li>Pros: Stronger and more supportive of large overhangs</li>
+            <li>Best for: Geometric structures, tilted models, spheres, large flat overhangs</li>
+          </ul>
+          
+          <h2>"On build plate only" vs "Supports Everywhere"</h2>
+          <ul>
+            <li><strong>On build plate only</strong>: Restricts support to the print bed only. Prevents scarring on model surfaces. Best for simple overhangs.</li>
+            <li><strong>Supports Everywhere</strong>: Creates supports from the model itself. Required for complex geometries with internal cavities or overlapping parts.</li>
+          </ul>
+          
+          <h2>Workflow to Generate Supports</h2>
+          <ol>
+            <li><strong>Analyze and Orient</strong>: Examine your model for overhangs. Consider re-orienting to minimize support usage.</li>
+            <li><strong>Auto Support Generate</strong>: Enable "Support" and choose the type that fits your model.</li>
+            <li><strong>Preview Check</strong>: Verify no part starts "in mid-air" and that critical details are properly supported.</li>
+          </ol>
+          
+          <h2>How to Remove Supports Without Damage</h2>
+          <ul>
+            <li>Use flush cutters to snip connection points carefully</li>
+            <li>Don't rip them off violently</li>
+            <li>Warm water (for PLA) can soften supports slightly</li>
+            <li>Small marks can be removed with fine-grit sandpaper</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Will removing supports ruin the surface of my model?', a: 'Supports often leave small marks or "scars" where they touch the print. To minimize this, use Tree Supports for organic models or tune your "Z-distance" settings. Any remaining marks can usually be removed with fine-grit sandpaper or a hobby knife.' },
+          { q: 'Why did my print fail even with support enabled?', a: 'Slicers sometimes miss small overhangs or isolated parts. Always verify the Preview mode before printing. If you see unsupported areas starting in mid-air, you must manually add support using the "Paint-on" feature.' }
+        ]
       },
       {
         id: 'phase4-ep04',
@@ -600,8 +874,37 @@ const PHASES = {
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何在切片软件中添加多色？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>In the world of 3D printing, you are no longer limited to a single color. This guide will walk you through the process of painting your model in the slicer.</p>
+          
+          <h2>What should you set before painting a model?</h2>
+          <p>Before you start painting, you need to tell the software how many colors you plan to use.</p>
+          <ul>
+            <li>Open the Filament list, which shows all available filaments in the current project as colored boxes.</li>
+            <li>Click a color box to select a filament for painting. You can assign a different filament to each section of your model.</li>
+          </ul>
+          
+          <h2>How to start color painting in the slicer?</h2>
+          <p>Once the colors are ready, select your model and click the Color Painting icon in the top toolbar (or press shortcut N) to enter Painting Mode.</p>
+          
+          <h2>Which painting tool should you pick?</h2>
+          <ul>
+            <li><strong>Circle Tool</strong>: Works like a brush for freely painting curved or irregular areas. You can lock to vertical or horizontal mode for aligned strokes.</li>
+            <li><strong>Sphere Tool</strong>: Colors all faces inside the brush volume, not just visible ones. Useful for models with holes or internal structures.</li>
+            <li><strong>Triangle Tool</strong>: Colorizes a single triangle pointed by the mouse. Best for logos, sharp edges, and small corrections.</li>
+            <li><strong>Height Range Tool</strong>: Paints all facets within a specific height range. Useful for horizontal color bands.</li>
+            <li><strong>Fill Tool</strong>: Colorizes connected facets from the pointed area. Stops at different colors or sharp corners.</li>
+            <li><strong>Gap Fill Tool</strong>: Detects small gaps and auto-fills them with neighboring colors.</li>
+          </ul>
+          
+          <h2>Pro Tip: How to paint hidden or blocked areas?</h2>
+          <p><strong>Section View</strong> lets you temporarily cut open the model so you can see and paint surfaces that are normally blocked. It is useful when outer shells cover the areas you want to color.</p>
+        `,
+        faq: [
+          { q: 'Why does the estimated print time increase so much after painting?', a: 'Multi-color printing requires frequent filament changes. Each time a color switches on a layer, the printer must retract, cut, load new material, and purge the nozzle.' },
+          { q: 'Can I apply a color photo directly to my model?', a: 'No, the slicer\'s painting tools are for manual coloring. However, you can use Meshy\'s AI Texturing tool to generate the texture first and then export the multi-color model directly into your slicer.' }
+        ]
       },
       {
         id: 'phase4-ep05',
@@ -609,8 +912,33 @@ const PHASES = {
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '如何打印多色模型？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>If you've generated a textured model in Meshy, you can convert it into a physical multi-color print with just a few steps.</p>
+          <p>📌 Tip: Keep model detail high — recommended 100k+ faces.</p>
+          
+          <h2>How to enable multi-color printing in Meshy?</h2>
+          <p>Once you are satisfied with your model, click the printing icon at the bottom and choose Multi-Color Printing to enter the optimization suite.</p>
+          
+          <h2>Color Count Management (1-16)</h2>
+          <p>You can select between 1–16 colors. For most setups, we recommend using 4 colors for the best balance between print quality and efficiency. Based on your selection, the system will automatically detect and assign the dominant colors to your model.</p>
+          
+          <h2>Level of Detail</h2>
+          <p>You can choose how much color detail from your original model is preserved in the multi-color printing preparation. Higher values retain fine edges, textures, and small features, while lower values simplify the model.</p>
+          
+          <h2>Filament Slots Management</h2>
+          <p>Assign and preview which colors are mapped to each filament slot before printing. You can manually select any part of the model and adjust its color, then map that color to a specific filament slot.</p>
+          
+          <h2>Resize for Scale</h2>
+          <p>Before downloading, you can adjust the dimensions of your model to fit your specific printing needs.</p>
+          
+          <h2>Download or Direct Send</h2>
+          <p>Then you can download the optimized model in 3MF or OBJ format or use our One-Click Send to Bambu Studio feature for a seamless transition.</p>
+        `,
+        faq: [
+          { q: 'Which file format is best for multi-color 3D printing?', a: '3MF is the highly recommended format.' },
+          { q: 'Where can I find examples of successful multi-color prints created with Meshy?', a: 'You can explore the Meshy Community Gallery or join our Discord server. Many users share their physical results there, along with the specific slicer settings they used.' }
+        ]
       },
       {
         id: 'phase4-ep06',
@@ -618,8 +946,54 @@ const PHASES = {
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '有哪些高级切片技巧？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          
+          <h2>Variable Layer Height: Control detail and speed</h2>
+          <p>Variable Layer Height lets the slicer use different layer thicknesses in different parts of a model instead of one fixed layer height.</p>
+          <ul>
+            <li>Uses thinner layers on curves and slopes → smoother surface</li>
+            <li>Uses thicker layers on flat areas → faster printing</li>
+          </ul>
+          <p><strong>How to use:</strong></p>
+          <ul>
+            <li><strong>Adaptive (Quality–Speed slider)</strong>: Adjust toward Quality for finer layers, or Speed for thicker layers.</li>
+            <li><strong>Manual Painting</strong>: Use the vertical bar to paint thinner or thicker layers for specific heights.</li>
+            <li><strong>Smooth mode</strong>: Smooths transitions between different layer heights.</li>
+          </ul>
+          <p>⚠️ For multi-color prints with a prime tower, all models must use the same variable layer height settings.</p>
+          
+          <h2>Ironing: Smooth the top surfaces</h2>
+          <p>While Variable Layer Height handles vertical curves, ironing perfects flat top surfaces. The hot nozzle runs over the final printed layer again to melt and flatten rough lines, like ironing a shirt.</p>
+          <ul>
+            <li>Creates a smooth, injection-molded finish on flat areas</li>
+            <li>Trade-off: Adds extra print time</li>
+            <li>Note: Only effective on horizontal flat surfaces, not curved tops</li>
+          </ul>
+          
+          <h2>Fuzzy Skin: Hide layer lines and add texture</h2>
+          <p>Instead of drawing smooth straight lines, the printer randomly jitters the nozzle to create a rough, textured finish on the outer walls.</p>
+          <ul>
+            <li>Completely hides layer lines, ringing, and Z-seams</li>
+            <li>Simulates materials like stone, cast iron, or fur</li>
+            <li>Adds excellent grip to tool handles and knobs</li>
+            <li>Trade-off: Massively increases print time</li>
+          </ul>
+          <p>⚠️ Do not use on mating surfaces (like lids or screw threads), or parts won't fit together.</p>
+          
+          <h2>Hide Seams: Why is there an ugly line on my model?</h2>
+          <p>Every FDM print has a "Z-Seam"—a vertical scar formed where the printer starts and stops each layer.</p>
+          <ul>
+            <li><strong>Aligned (Sharpest Corner)</strong>: Best default setting. Hides the seam inside the model's natural edges.</li>
+            <li><strong>Back</strong>: Forces the seam to the rear of the model.</li>
+            <li><strong>Seam Painting</strong>: For total control, manually draw a line to place the seam exactly where you want.</li>
+            <li>Avoid "Random": This creates a "zits" effect that usually looks worse than a single clean line.</li>
+          </ul>
+        `,
+        faq: [
+          { q: 'Can I use Fuzzy Skin on parts that need to fit together?', a: 'Generally, no. The added texture creates thickness and roughness, changing the part\'s dimensions. Always use a Modifier to disable Fuzzy Skin on critical mating surfaces.' },
+          { q: 'Why is the seam still visible on my round model even with "Aligned"?', a: '"Aligned" relies on sharp corners to hide the seam. Round models have no corners, so the software cannot hide the line automatically. Use "Back" or "Seam Painting" instead.' }
+        ]
       }
     ]
   },
@@ -636,8 +1010,35 @@ const PHASES = {
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '首层问题如何解决？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>The Great Escape: Why models lose their grip?</p>
+          <p>If your 3D model were a ballerina, its tiny claw-tips or slender legs might be performing a daring pirouette on the virtual stage of your slicer. But once music starts on the physical print bed, gravity can be a harsh critic. Without a solid footing, your character might just decide to take an unscheduled bow and fall right off the stage. This guide helps you give your models the strong foundation they need.</p>
+          
+          <h2>Common Issues</h2>
+          <p><strong>Issue A: Uneven Bottom</strong>. The AI generates a base with tiny bumps or uneven textures, preventing it from lying perfectly flat.</p>
+          <p><strong>Issue B: Tiny Contact Points</strong>. The character has claws or thin feet, meaning there is almost zero surface area sticking to the bed.</p>
+          
+          <h2>How can you fix it?</h2>
+          
+          <h3>Method A (Best for characters without a base): Use the Meshy "Add Base" feature</h3>
+          <p>How to do it: Go to the Print tab in Meshy and click the Add Base button.</p>
+          <p>Key Tip: After adding the base, check the preview carefully. Make sure all bottom parts of your model (like claw tips) are fully touching and merged into the new base. This turns tiny contact points into one solid, stable foundation to prevent print failure.</p>
+          
+          <h3>Method B (Universal fix): Use the "Planar Cut" tool in your slicer</h3>
+          <p>How to do it: This works whether your model has a base or not. In slicing software like PrusaSlicer or Bambu Studio, press the C key to open the Cut tool. Move the cutting plane up by 0.5mm - 1.0mm to cut off the uneven bits.</p>
+          <p>The Result: This forces the bottom of the model to be a perfectly flat surface for 100% bed adhesion.</p>
+          
+          <h3>Method C: Z-Axis Sinking</h3>
+          <p>Alternatively, you can move the model down along the Z-axis (e.g., Z = -1.0mm) so the uneven bottom part is "sunk" below the virtual build plate. The slicer will ignore anything below zero and print a flat first layer starting from the new contact point.</p>
+          
+          <h3>Method D: Add a Brim or Raft</h3>
+          <p>In your slicer settings, go to Other → Bed Adhesion → turn on Brim. This prints a wide "ring" around the bottom of the model to help it grip the bed.</p>
+        `,
+        faq: [
+          { q: 'What is the best method for complex characters?', a: 'The Meshy "Add Base" feature is usually the best for complex characters as it provides a stable foundation without manual intervention in the slicer.' },
+          { q: 'Will cutting off part of the model affect its appearance?', a: 'Usually not. The bottom 0.5-1.0mm is rarely visible once the print is complete and sitting on a surface.' }
+        ]
       },
       {
         id: 'phase5-ep02',
@@ -645,8 +1046,36 @@ const PHASES = {
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '细节太细怎么办？', a: 'Next - 即将更新' }]
+        content: `
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>The Precision Crisis: Saving Fingers and Fairytales</p>
+          
+          <h2>The Problem: Why do my hero's fingers look like spaghetti?</h2>
+          <p>We've all been there: your character looks like a legend in the slicer, but comes out of the printer with fingers that snap like dry twigs or hair that looks more like a bird's nest. Those tiny features look glorious in your preview but turn into a crumbly mess the moment they meet the real world.</p>
+          
+          <h2>The Cause: The "Big Pen" Struggle</h2>
+          <p>Think of your FDM printer as a giant trying to write a love letter with a thick Sharpie. Most printers use a standard 0.4mm nozzle. If you try to print a strand of hair or a tiny cane that's thinner than that "pen tip," the printer simply loses its mind. It can't pour enough "ink" to give the part any real bone and muscle.</p>
+          
+          <h2>How to fix this:</h2>
+          
+          <h3>Hardware Solution: Change the Nozzle</h3>
+          <p>If you need high precision for miniature details, the most direct fix is a hardware upgrade:</p>
+          <p><strong>Install a 0.2mm Nozzle</strong>: This allows the printer to extrude much finer lines, capturing details that a 0.4mm nozzle would simply skip.</p>
+          <p>⚠️ Note: Smaller nozzles increase the risk of clogging and will significantly increase your total print time.</p>
+          
+          <h3>Software Solutions: Slicer Adjustments</h3>
+          <p>If you prefer to stick with your current hardware, use these digital workarounds:</p>
+          
+          <p><strong>Option 1: Scale Up (120% - 200%)</strong></p>
+          <p>Increasing the overall size of the model is the simplest fix. It widens thin features until they exceed the 0.4mm threshold, giving the printer enough space to create a solid structure.</p>
+          
+          <p><strong>Option 2: The "Cut & Lay Flat" Technique</strong></p>
+          <p>Use the Cut tool in your slicer to separate delicate parts (like a staff or an outstretched arm). Rotate these pieces and print them flat on the build plate for better results.</p>
+        `,
+        faq: [
+          { q: 'Will a 0.2mm nozzle work with all filaments?', a: 'No. Some specialty filaments like Wood PLA, Glow-in-the-Dark, and sparkling filaments are not compatible with 0.2mm nozzles due to particle size.' },
+          { q: 'How much longer does printing with a 0.2mm nozzle take?', a: 'Expect 2-4x longer print times compared to a 0.4mm nozzle, as the printer needs to deposit many more layers and lines to cover the same area.' }
+        ]
       },
       {
         id: 'phase5-ep03',
