@@ -13,14 +13,14 @@ const UI = {
           <div class="stat">
             <span class="stat-icon">⭐</span>
             <span class="stat-value">${points}</span>
-            <span class="stat-label">积分</span>
+            <span class="stat-label">Points</span>
           </div>
           <div class="stat">
             <span class="stat-icon">📊</span>
             <span class="stat-value">${skillLevel}</span>
-            <span class="stat-label">技能等级</span>
+            <span class="stat-label">Skill</span>
           </div>
-          <button class="btn btn-icon" onclick="UI.showAchievements()" title="成就">
+          <button class="btn btn-icon" onclick="UI.showAchievements()" title="Achievements">
             🏆
           </button>
         </div>
@@ -42,13 +42,13 @@ const UI = {
       statusContent = `
         <div class="phase-status">
           <span class="lock-icon">🔒</span>
-          <span class="lock-text">完成 ${phase.unlockRequirement} 个教程解锁</span>
+          <span class="lock-text">Complete ${phase.unlockRequirement} tutorials to unlock</span>
         </div>
       `;
     } else if (progress.total === 0) {
       statusContent = `
         <div class="phase-status">
-          <span class="coming-soon">即将推出</span>
+          <span class="coming-soon">Coming Soon</span>
         </div>
       `;
     } else {
@@ -89,12 +89,12 @@ const UI = {
           ${phaseCards}
         </div>
         <div class="total-progress">
-          <h3 class="total-progress-title">总体进度</h3>
+          <h3 class="total-progress-title">Overall Progress</h3>
           <div class="progress-bar progress-bar-large">
             <div class="progress-fill" style="width: ${totalProgress.percentage}%"></div>
           </div>
           <p class="total-progress-text">
-            ${totalProgress.completed} / ${totalProgress.total} 教程完成 (${totalProgress.percentage}%)
+            ${totalProgress.completed} / ${totalProgress.total} tutorials completed (${totalProgress.percentage}%)
           </p>
         </div>
       </div>
@@ -110,8 +110,8 @@ const UI = {
       return `
         <div class="locked-message">
           <span class="lock-icon-large">🔒</span>
-          <p>此阶段尚未解锁</p>
-          <p class="hint">完成 ${phase.unlockRequirement} 个教程来解锁</p>
+          <p>This phase is locked</p>
+          <p class="hint">Complete ${phase.unlockRequirement} tutorials to unlock</p>
         </div>
       `;
     }
@@ -120,7 +120,7 @@ const UI = {
       return `
         <div class="empty-state">
           <span class="empty-icon">📚</span>
-          <p>教程即将推出</p>
+          <p>Tutorials coming soon</p>
         </div>
       `;
     }
@@ -135,11 +135,11 @@ const UI = {
           <div class="tutorial-status">${statusIcon}</div>
           <div class="tutorial-info">
             <h4 class="tutorial-title">${tutorial.title}</h4>
-            <p class="tutorial-author">作者: ${tutorial.author}</p>
+            <p class="tutorial-author">Author: ${tutorial.author}</p>
           </div>
           <div class="tutorial-points">
             <span class="points-value">${tutorial.points}</span>
-            <span class="points-label">积分</span>
+            <span class="points-label">Points</span>
           </div>
         </div>
       `;
@@ -148,7 +148,7 @@ const UI = {
     return `
       <div class="tutorial-list">
         <div class="tutorial-list-header">
-          <button class="btn btn-back" onclick="UI.showHome()">← 返回</button>
+          <button class="btn btn-back" onclick="UI.showHome()">← Back</button>
           <h2 class="phase-title-large">${phase.icon} ${phase.title}</h2>
           <p class="phase-subtitle-large">${phase.subtitle}</p>
         </div>
@@ -157,6 +157,30 @@ const UI = {
         </div>
       </div>
     `;
+  },
+
+  getAdjacentTutorials(tutorialId) {
+    let allTutorials = [];
+    let currentIndex = -1;
+    
+    for (const phaseId of Object.keys(PHASES)) {
+      const phase = PHASES[phaseId];
+      for (let i = 0; i < phase.tutorials.length; i++) {
+        allTutorials.push({
+          id: phase.tutorials[i].id,
+          phaseId: phaseId,
+          title: phase.tutorials[i].title
+        });
+        if (phase.tutorials[i].id === tutorialId) {
+          currentIndex = allTutorials.length - 1;
+        }
+      }
+    }
+    
+    return {
+      prev: currentIndex > 0 ? allTutorials[currentIndex - 1] : null,
+      next: currentIndex < allTutorials.length - 1 ? allTutorials[currentIndex + 1] : null
+    };
   },
 
   renderTutorial(tutorialId) {
@@ -178,20 +202,11 @@ const UI = {
     
     const isCompleted = progressManager.isCompleted(tutorialId);
     const phase = PHASES[phaseId];
+    const adjacent = this.getAdjacentTutorials(tutorialId);
     
-    let completeButton = '';
-    if (!isCompleted) {
-      completeButton = `
-        <button class="btn btn-success btn-large" onclick="UI.completeTutorial('${tutorialId}')">
-          ✅ 完成教程 (+${tutorial.points} 积分)
-        </button>
-      `;
-    } else {
-      completeButton = `
-        <div class="completed-badge">
-          ✅ 已完成
-        </div>
-      `;
+    let statusBadge = '';
+    if (isCompleted) {
+      statusBadge = `<span class="status-badge completed">✅ Completed</span>`;
     }
     
     let faqSection = '';
@@ -211,24 +226,65 @@ const UI = {
       
       faqSection = `
         <div class="faq-section">
-          <h3 class="faq-title">常见问题</h3>
+          <h3 class="faq-title">FAQ</h3>
           ${faqItems}
         </div>
       `;
     }
     
+    let navButtons = '<div class="tutorial-nav-buttons">';
+    
+    if (adjacent.prev) {
+      navButtons += `
+        <button class="btn btn-nav btn-prev" onclick="UI.navigateToTutorial('${adjacent.prev.id}')">
+          <span class="nav-arrow">←</span>
+          <span class="nav-text">
+            <span class="nav-label">Previous</span>
+            <span class="nav-title">${adjacent.prev.title}</span>
+          </span>
+        </button>
+      `;
+    } else {
+      navButtons += '<div class="btn-nav-placeholder"></div>';
+    }
+    
+    if (adjacent.next) {
+      navButtons += `
+        <button class="btn btn-nav btn-next" onclick="UI.goToNextTutorial('${tutorialId}', '${adjacent.next.id}')">
+          <span class="nav-text">
+            <span class="nav-label">Next</span>
+            <span class="nav-title">${adjacent.next.title}</span>
+          </span>
+          <span class="nav-arrow">→</span>
+        </button>
+      `;
+    } else {
+      navButtons += `
+        <button class="btn btn-nav btn-next" onclick="UI.completeAndReturn('${tutorialId}', '${phaseId}')">
+          <span class="nav-text">
+            <span class="nav-label">Complete</span>
+            <span class="nav-title">Back to ${phase.title}</span>
+          </span>
+          <span class="nav-arrow">✓</span>
+        </button>
+      `;
+    }
+    
+    navButtons += '</div>';
+    
     return `
       <div class="tutorial">
         <div class="tutorial-header">
-          <button class="btn btn-back" onclick="UI.showPhase('${phaseId}')">← 返回</button>
+          <button class="btn btn-back" onclick="UI.showPhase('${phaseId}')">← Back</button>
           <div class="tutorial-meta">
             <span class="tutorial-phase">${phase.icon} ${phase.title}</span>
+            ${statusBadge}
           </div>
         </div>
         
         <article class="tutorial-content">
           <h1 class="tutorial-main-title">${tutorial.title}</h1>
-          <p class="tutorial-author-line">作者: ${tutorial.author}</p>
+          <p class="tutorial-author-line">Author: ${tutorial.author}</p>
           
           <div class="tutorial-body">
             ${tutorial.content}
@@ -237,11 +293,51 @@ const UI = {
           ${faqSection}
           
           <div class="tutorial-footer">
-            ${completeButton}
+            ${navButtons}
           </div>
         </article>
       </div>
     `;
+  },
+
+  navigateToTutorial(tutorialId) {
+    router.navigate(`/tutorial/${tutorialId}`);
+  },
+
+  goToNextTutorial(currentId, nextId) {
+    let tutorial = null;
+    for (const phaseId of Object.keys(PHASES)) {
+      const found = PHASES[phaseId].tutorials.find(t => t.id === currentId);
+      if (found) {
+        tutorial = found;
+        break;
+      }
+    }
+    
+    if (tutorial && !progressManager.isCompleted(currentId)) {
+      progressManager.completeTutorial(currentId, tutorial.points, tutorial.skillBonus || 0);
+      this.updateHeader();
+    }
+    
+    router.navigate(`/tutorial/${nextId}`);
+  },
+
+  completeAndReturn(tutorialId, phaseId) {
+    let tutorial = null;
+    for (const pid of Object.keys(PHASES)) {
+      const found = PHASES[pid].tutorials.find(t => t.id === tutorialId);
+      if (found) {
+        tutorial = found;
+        break;
+      }
+    }
+    
+    if (tutorial && !progressManager.isCompleted(tutorialId)) {
+      progressManager.completeTutorial(tutorialId, tutorial.points, tutorial.skillBonus || 0);
+      this.updateHeader();
+    }
+    
+    router.navigate(`/phase/${phaseId}`);
   },
 
   renderAchievements() {
@@ -270,24 +366,24 @@ const UI = {
         <div class="achievements-content" onclick="event.stopPropagation()">
           <button class="btn btn-close" onclick="UI.closeModal()">✕</button>
           
-          <h2 class="achievements-title">🏆 成就</h2>
+          <h2 class="achievements-title">🏆 Achievements</h2>
           
           <div class="achievements-stats">
             <div class="stat-card">
               <span class="stat-number">${earnedCount}/${totalCount}</span>
-              <span class="stat-desc">徽章获得</span>
+              <span class="stat-desc">Badges</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${completedTutorials}</span>
-              <span class="stat-desc">教程完成</span>
+              <span class="stat-desc">Completed</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${totalPoints}</span>
-              <span class="stat-desc">总积分</span>
+              <span class="stat-desc">Points</span>
             </div>
             <div class="stat-card">
               <span class="stat-number">${skillLevel}</span>
-              <span class="stat-desc">技能等级</span>
+              <span class="stat-desc">Skill Level</span>
             </div>
           </div>
           
