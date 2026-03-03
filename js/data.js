@@ -8,6 +8,7 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase1-ep01',
+        shortTitle: '[Phase 1 EP01]',
         title: 'How do I choose my first 3D printer?',
         author: 'Xinyi Li',
         points: 20,
@@ -45,6 +46,7 @@ const PHASES = {
       },
       {
         id: 'phase1-ep02',
+        shortTitle: '[Phase 1 EP02]',
         title: 'Is 3D printing safe? What you need to know about fumes and fire',
         author: 'Xinyi Li',
         points: 20,
@@ -76,6 +78,7 @@ const PHASES = {
       },
       {
         id: 'phase1-ep03',
+        shortTitle: '[Phase 1 EP03]',
         title: 'What do these 3D printing words mean? A Beginner\'s Dictionary',
         author: 'Xinyi Li',
         points: 20,
@@ -113,6 +116,7 @@ const PHASES = {
       },
       {
         id: 'phase1-ep04',
+        shortTitle: '[Phase 1 EP04]',
         title: 'What is the Day 1 checklist for a successful first print?',
         author: 'Xinyi Li',
         points: 20,
@@ -145,6 +149,7 @@ const PHASES = {
       },
       {
         id: 'phase1-ep05',
+        shortTitle: '[Phase 1 EP05]',
         title: 'What are the "Must-Have" tools for every 3D printing kit?',
         author: 'Xinyi Li',
         points: 20,
@@ -192,6 +197,7 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase2-ep01',
+        shortTitle: '[Phase 2 EP01]',
         title: 'How does Meshy change the game for non-designers?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
@@ -215,6 +221,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep02',
+        shortTitle: '[Phase 2 EP02]',
         title: 'What are the Dos and Don\'ts for Meshy printability?',
         author: 'Xinyi Li',
         points: 30,
@@ -256,6 +263,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep03',
+        shortTitle: '[Phase 2 EP03]',
         title: 'Text-to-3D Workflow: How to craft banger prompts to generate printable models?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
@@ -310,6 +318,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep04',
+        shortTitle: '[Phase 2 EP04]',
         title: 'Image-to-3D Workflow: How to Pick Right Images for 3D Generation?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -352,6 +361,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep05',
+        shortTitle: '[Phase 2 EP05]',
         title: 'AI Model Repair: How to Fix Your STL Files for a Flawless Print?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -387,6 +397,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep06',
+        shortTitle: '[Phase 2 EP06]',
         title: 'AI Texturing: How to Add Textures to 3D Models in Meshy?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -422,6 +433,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep07',
+        shortTitle: '[Phase 2 EP07]',
         title: 'Texture Edit: How to Refine and Customize Your 3D Model Textures?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -479,6 +491,7 @@ const PHASES = {
       },
       {
         id: 'phase2-ep08',
+        shortTitle: '[Phase 2 EP08]',
         title: 'Texture Helper: How to Improve Your Texture Prompts with Meshy\'s AI Helper?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -515,6 +528,7 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase3-ep01',
+        shortTitle: '[Phase 3 EP01]',
         title: 'Why 90% of Your Prints Should Start With PLA Basic or PLA Matte?',
         author: 'Weihan Yang',
         points: 30,
@@ -553,6 +567,7 @@ const PHASES = {
       },
       {
         id: 'phase3-ep02',
+        shortTitle: '[Phase 3 EP02]',
         title: 'Speciality PLA Filament: How Do I Print PLA Silk, Marble, Wood, and Glow-in-the-Dark?',
         author: 'Weihan Yang',
         points: 30,
@@ -598,6 +613,7 @@ const PHASES = {
       },
       {
         id: 'phase3-ep03',
+        shortTitle: '[Phase 3 EP03]',
         title: 'When Should I Switch from PLA to PETG for 3D Printing?',
         author: 'Weihan Yang',
         points: 30,
@@ -631,6 +647,7 @@ const PHASES = {
       },
       {
         id: 'phase3-ep04',
+        shortTitle: '[Phase 3 EP04]',
         title: 'How Do I Dry Wet 3D Printing Filament and Prevent Moisture Damage?',
         author: 'Weihan Yang',
         points: 30,
@@ -672,6 +689,7 @@ const PHASES = {
       },
       {
         id: 'phase3-ep05',
+        shortTitle: '[Phase 3 EP05]',
         title: 'How Can I Reduce 3D Printing Waste and Print More Sustainably?',
         author: 'Weihan Yang',
         points: 30,
@@ -720,6 +738,7 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase4-ep01',
+        shortTitle: '[Phase 4 EP01]',
         title: 'Slicing 101: How does a 3D printer know what to print?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
@@ -756,6 +775,7 @@ const PHASES = {
       },
       {
         id: 'phase4-ep02',
+        shortTitle: '[Phase 4 EP02]',
         title: 'Profile Tuning: How to Set Up 3D Printing Slicer for the Best Results?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -812,6 +832,7 @@ const PHASES = {
       },
       {
         id: 'phase4-ep03',
+        shortTitle: '[Phase 4 EP03]',
         title: 'Support Structures: How to build support for complex, floating models?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
@@ -870,6 +891,7 @@ const PHASES = {
       },
       {
         id: 'phase4-ep04',
+        shortTitle: '[Phase 4 EP04]',
         title: 'Multi-Color in Slicer: How to Paint Your 3D Models?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -908,6 +930,7 @@ const PHASES = {
       },
       {
         id: 'phase4-ep05',
+        shortTitle: '[Phase 4 EP05]',
         title: 'Multi-Color Printing: How to Turn a Meshy Textured Model into a Multi-Color 3D Print?',
         author: 'Molly (Yihan) Sun',
         points: 30,
@@ -942,6 +965,7 @@ const PHASES = {
       },
       {
         id: 'phase4-ep06',
+        shortTitle: '[Phase 4 EP06]',
         title: 'Slicing Tips: How to use Variable layer height, Ironing, Fuzzy skin, and Hide seams?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
@@ -1006,6 +1030,7 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase5-ep01',
+        shortTitle: '[Phase 5 EP01]',
         title: 'Uneven First Layer - Fixing failed prints due to poor first-layer stick or small contact area',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1042,6 +1067,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep02',
+        shortTitle: '[Phase 5 EP02]',
         title: 'Model Detail Too Thin - Fixing failed prints due to Fragile or Tiny Parts',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1079,6 +1105,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep03',
+        shortTitle: '[Phase 5 EP03]',
         title: 'The model lacks detail - The physical print does not look as detailed as the 3D view',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1088,6 +1115,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep04',
+        shortTitle: '[Phase 5 EP04]',
         title: 'Thin Wall - How to handle thin wall issues',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1097,6 +1125,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep05',
+        shortTitle: '[Phase 5 EP05]',
         title: 'The Visual Fail Gallery - Match your "spaghetti" to our photo guide to find the fix',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1106,6 +1135,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep06',
+        shortTitle: '[Phase 5 EP06]',
         title: 'Bed Adhesion & Leveling - Mastering the "Paper Test" and the perfect first layer',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1115,6 +1145,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep07',
+        shortTitle: '[Phase 5 EP07]',
         title: 'Fighting the Frizz - How to eliminate stringing, oozing, and blobs',
         author: 'Tony (Yuchen) Liu',
         points: 40,
@@ -1124,6 +1155,7 @@ const PHASES = {
       },
       {
         id: 'phase5-ep08',
+        shortTitle: '[Phase 5 EP08]',
         title: 'Clog Surgery - The "Cold Pull" method and nozzle replacement guide',
         author: 'Tony (Yuchen) Liu',
         points: 40,

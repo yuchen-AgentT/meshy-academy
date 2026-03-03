@@ -134,6 +134,7 @@ const UI = {
         <div class="${statusClass}" onclick="UI.showTutorial('${tutorial.id}')">
           <div class="tutorial-status">${statusIcon}</div>
           <div class="tutorial-info">
+            <span class="tutorial-ep">${tutorial.shortTitle}</span>
             <h4 class="tutorial-title">${tutorial.title}</h4>
             <p class="tutorial-author">Author: ${tutorial.author}</p>
           </div>
@@ -169,7 +170,8 @@ const UI = {
         allTutorials.push({
           id: phase.tutorials[i].id,
           phaseId: phaseId,
-          title: phase.tutorials[i].title
+          title: phase.tutorials[i].title,
+          shortTitle: phase.tutorials[i].shortTitle
         });
         if (phase.tutorials[i].id === tutorialId) {
           currentIndex = allTutorials.length - 1;
@@ -240,7 +242,7 @@ const UI = {
           <span class="nav-arrow">←</span>
           <span class="nav-text">
             <span class="nav-label">Previous</span>
-            <span class="nav-title">${adjacent.prev.title}</span>
+            <span class="nav-title">${adjacent.prev.shortTitle}</span>
           </span>
         </button>
       `;
@@ -253,7 +255,7 @@ const UI = {
         <button class="btn btn-nav btn-next" onclick="UI.goToNextTutorial('${tutorialId}', '${adjacent.next.id}')">
           <span class="nav-text">
             <span class="nav-label">Next</span>
-            <span class="nav-title">${adjacent.next.title}</span>
+            <span class="nav-title">${adjacent.next.shortTitle}</span>
           </span>
           <span class="nav-arrow">→</span>
         </button>
@@ -283,6 +285,7 @@ const UI = {
         </div>
         
         <article class="tutorial-content">
+          <div class="tutorial-short-title">${tutorial.shortTitle}</div>
           <h1 class="tutorial-main-title">${tutorial.title}</h1>
           <p class="tutorial-author-line">Author: ${tutorial.author}</p>
           
