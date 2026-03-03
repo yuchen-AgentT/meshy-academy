@@ -8,174 +8,177 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase1-ep01',
-        title: '如何选择第一台 3D 打印机？',
+        title: 'How do I choose my first 3D printer?',
         author: 'Xinyi Li',
         points: 20,
         skillBonus: 0,
         content: `
-          <h2>选择第一台 3D 打印机</h2>
-          <p>选择第一台 3D 打印机可能让人感到困惑。本教程将帮助你了解关键因素。</p>
-          <h3>关键考虑因素</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Don't just hunt for the absolute cheapest clone on the market. In 2026, the real choice isn't about "quality"—most mainstream brands produce great results. The real choice is between a machine that is an "Appliance" (focused on printing) and one that is a "Project" (focused on tinkering).</p>
+          
+          <h2>FDM vs. Resin: Which one should I start with?</h2>
+          <p>This is the "fork in the road." Based on our tracking of over 10,000+ community members, most beginners find more long-term success starting with FDM:</p>
           <ul>
-            <li><strong>预算</strong>：入门级 FDM 打印机通常在 $200-500 之间</li>
-            <li><strong>打印体积</strong>：决定你能打印多大的模型</li>
-            <li><strong>易用性</strong>：自动调平、触控屏等功能</li>
-            <li><strong>社区支持</strong>：活跃的社区意味着更多帮助</li>
+            <li><strong>FDM (Filament)</strong>: Uses spools of plastic. Best for functional parts, toys, and large props. It's safer, cleaner, and the "standard" 3D printing experience.</li>
+            <li><strong>Resin (SLA/LCD)</strong>: Uses liquid chemicals. Best for high-detail miniatures (D&D) and jewelry. <em>Warning: It is messy, smells, and requires gloves/masks.</em></li>
           </ul>
-          <h3>推荐品牌</h3>
-          <p>Bambu Lab、Creality、Prusa 都是不错的选择。</p>
-          <h3>FDM vs 树脂打印机</h3>
-          <table>
-            <tr><th>FDM 打印机</th><th>树脂打印机 (SLA/DLP)</th></tr>
-            <tr><td>成本较低，操作简单</td><td>精度高，表面光滑</td></tr>
-            <tr><td>适合打印较大模型</td><td>适合打印精细模型</td></tr>
-            <tr><td>材料种类多 (PLA, PETG, ABS...)</td><td>后处理复杂，需要清洗固化</td></tr>
-          </table>
+          <p><strong>Meshy's Take:</strong> Start with FDM unless you specifically only want to print tiny 28mm soldiers.</p>
+          
+          <h2>The "Appliance" vs. The "DIY Path": What's the difference?</h2>
+          <p>Instead of looking at price tags, look at the workflow:</p>
+          <ul>
+            <li><strong>The Appliance Experience</strong>: These are "ready-to-print" machines from reputable mainstream brands. They focus on UX, offering AI-assisted monitoring and seamless app integration so you can spend your time creating, not fixing.</li>
+            <li><strong>The DIY Path</strong>: Often found at the budget end, these require manual tuning and constant "tinkering". Great for learning how machines work, but frustrating if you just want a finished model.</li>
+          </ul>
+          
+          <h2>How do I know if a printer is "Newbie-Friendly"?</h2>
+          <p>In 2026, features like Auto Bed Leveling (ABL) and PEI Build Plates are standard on most mid-range machines. Look for these "Newbie-Friendly" extras:</p>
+          <ol>
+            <li><strong>Remote Monitoring & App Control</strong>: Receive mobile alerts, view live progress, and pause prints from your phone.</li>
+            <li><strong>Filament Runout Sensor</strong>: Automatically pauses if you run out of plastic mid-print.</li>
+          </ol>
         `,
         faq: [
-          { q: '新手应该选择 FDM 还是树脂打印机？', a: '推荐新手从 FDM 打印机开始，操作更简单，成本更低，且适合打印较大的模型。' },
-          { q: '预算 $300 能买到好的入门打印机吗？', a: '可以。Creality Ender 3 系列、Anycubic Kobra 等都是性价比很高的选择。' }
+          { q: 'Is 3D printing an expensive hobby?', a: 'The initial cost is the printer ($200-$1,000). After that, a standard 1kg spool of PLA filament costs about $15-$25 and can print roughly 40-50 small "Benchy" boats. It is much cheaper than collecting high-end statues or LEGO sets.' },
+          { q: 'Can I put a 3D printer in my bedroom?', a: 'We don\'t recommend it. While FDM printing is generally safe, it still produces "Ultra-fine Particles" (UFPs). It\'s best to keep it in a well-ventilated room, an office, or a garage with some airflow.' }
         ]
       },
       {
         id: 'phase1-ep02',
-        title: '3D 打印安全须知：烟雾和防火知识',
+        title: 'Is 3D printing safe? What you need to know about fumes and fire',
         author: 'Xinyi Li',
         points: 20,
         skillBonus: 0,
         content: `
-          <h2>3D 打印安全须知</h2>
-          <p>安全是 3D 打印的第一要务。了解潜在风险，保护自己和家人。</p>
-          <h3>烟雾与通风</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>3D printing is safe if you aren't reckless. Modern machines are much safer than they used to be, but you are still melting plastic in your house. Use common sense: don't huff the fumes, and don't leave a "tinker" printer unattended.</p>
+          
+          <h2>Fumes: What are you actually breathing?</h2>
+          <p>The "smell" of printing depends entirely on the material. Based on air quality studies, FDM and Resin have very different safety profiles:</p>
           <ul>
-            <li>PLA 打印产生的烟雾较少，但保持通风仍很重要</li>
-            <li>ABS、ASA 等材料需要更好的通风或封闭式打印机</li>
-            <li>考虑使用空气净化器或外排系统</li>
+            <li><strong>FDM (Filament)</strong>: Standard PLA is generally considered safe, but it still emits Ultra-fine Particles (UFPs) and Volatile Organic Compounds (VOCs). Materials like ABS or ASA are "spicy" and require a dedicated enclosure and external venting.</li>
+            <li><strong>Resin (SLA)</strong>: These chemicals are sensitizers. You <em>must</em> wear nitrile gloves and a respirator. Never handle uncured resin with bare skin.</li>
           </ul>
-          <h3>防火安全</h3>
+          <p><strong>Meshy suggest</strong> keeping any 3D printer out of your bedroom to avoid long-term exposure to particulates.</p>
+          
+          <h2>Fire Safety: Is my printer a fire hazard?</h2>
+          <p>Early 3D printers were notorious for "Thermal Runaway"—where the heater gets stuck "on" until it catches fire.</p>
           <ul>
-            <li>不要让打印机无人值守长时间运行</li>
-            <li>使用烟雾报警器</li>
-            <li>确保电源线和插头完好无损</li>
-            <li>考虑使用防火垫</li>
+            <li><strong>Modern Gear</strong>: In 2026, reputable mainstream "Appliance-style" printers include robust firmware protections as a default. These systems automatically shut the machine down if a temperature anomaly is detected.</li>
+            <li><strong>Budget "Clones"</strong>: If you bought a $99 "no-name" printer, double-check that "Thermal Runaway Protection" is enabled in the settings.</li>
           </ul>
-          <h3>材料安全</h3>
-          <table>
-            <tr><th>材料</th><th>安全注意事项</th></tr>
-            <tr><td>PLA</td><td>最安全，烟雾少，适合室内</td></tr>
-            <tr><td>PETG</td><td>较安全，轻微烟雾</td></tr>
-            <tr><td>ABS/ASA</td><td>需要通风，有刺激性气味</td></tr>
-            <tr><td>树脂</td><td>需要手套，避免皮肤接触</td></tr>
-          </table>
         `,
         faq: [
-          { q: 'PLA 打印需要特殊通风吗？', a: 'PLA 相对安全，在通风良好的房间即可。但如果打印量大，建议增加通风。' },
-          { q: '可以通宵打印吗？', a: '虽然有很多人这样做，但不推荐无人值守长时间打印。使用定时插座或监控摄像头可以降低风险。' }
+          { q: 'Can I leave my 3D printer running while I\'m at work?', a: 'For high-end, reliable machines with built-in sensors, many users do this daily. However, for your first few weeks, we recommend only printing while you are home until you trust your setup.' },
+          { q: 'Are 3D printed items food-safe?', a: 'Generally, no. Even if the plastic is "food-safe," the tiny gaps between layers are breeding grounds for bacteria. Use 3D prints for display or utility, not for your dinner plate.' },
+          { q: 'Is it safe to have a 3D printer around pets or kids?', a: 'Only if it\'s enclosed. Hotends reach 220°C+ and the moving parts can easily pinch small fingers or inquisitive paws. An enclosure is a "must-have" for family-friendly setups.' }
         ]
       },
       {
         id: 'phase1-ep03',
-        title: '术语解码器：这些奇怪词汇是什么意思？',
+        title: 'What do these 3D printing words mean? A Beginner\'s Dictionary',
         author: 'Xinyi Li',
         points: 20,
         skillBonus: 0,
         content: `
-          <h2>3D 打印术语速查</h2>
-          <table>
-            <tr><th>术语</th><th>解释</th></tr>
-            <tr><td>FDM</td><td>Fused Deposition Modeling，熔融沉积成型，最常见的 3D 打印技术</td></tr>
-            <tr><td>STL</td><td>Standard Tessellation Language，3D 模型文件格式</td></tr>
-            <tr><td>Slicer</td><td>切片软件，将 3D 模型转换为打印机指令</td></tr>
-            <tr><td>Bed Leveling</td><td>热床调平，确保喷嘴与打印床距离均匀</td></tr>
-            <tr><td>Z-Offset</td><td>喷嘴与热床之间的距离，影响首层打印</td></tr>
-            <tr><td>Layer Height</td><td>层高，每层打印的厚度，影响精度和时间</td></tr>
-            <tr><td>Infill</td><td>填充，模型内部的支撑结构</td></tr>
-            <tr><td>Support</td><td>支撑，用于悬空部分的临时结构</td></tr>
-            <tr><td>Skirt/Brim</td><td>裙边/帽檐，打印前的预挤出线</td></tr>
-            <tr><td>Retraction</td><td>回抽，防止拉丝的技术</td></tr>
-            <tr><td>Nozzle</td><td>喷嘴，挤出耗材的部件</td></tr>
-            <tr><td>Extruder</td><td>挤出机，推送耗材的部件</td></tr>
-            <tr><td>Hot End</td><td>热端，加热耗材的部分</td></tr>
-            <tr><td>Heated Bed</td><td>热床，加热的打印平台</td></tr>
-          </table>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>3D printing is a world of weird acronyms and engineering slang. This is your cheat sheet to understanding the community on Reddit and knowing exactly why someone is telling you to "check your Z-offset".</p>
+          
+          <h2>What are the big "Three" terms you need to know?</h2>
+          <p>Before you hit print, you need to understand the workflow:</p>
+          <ul>
+            <li><strong>FDM (Fused Deposition Modeling)</strong>: The most common type of hobbyist printing that melts spools of plastic filament.</li>
+            <li><strong>Slicer</strong>: The software (like Bambu Studio or Cura) that acts as a "translator," turning your 3D model into machine instructions.</li>
+            <li><strong>G-Code</strong>: The actual language the printer speaks—it is a text file containing a long list of coordinates for the nozzle to follow.</li>
+          </ul>
+          
+          <h2>What are the most common hardware parts?</h2>
+          <ul>
+            <li><strong>Hotend</strong>: The metal part that gets very hot to melt the plastic filament so it can flow out. Think of it as the "heating element" in a glue gun.</li>
+            <li><strong>Extruder</strong>: The motor and gears that "push" the plastic into the hotend.</li>
+            <li><strong>Build Plate / Bed</strong>: The surface where the model is built; often made of textured steel (PEI).</li>
+          </ul>
+          
+          <h2>What terms will save your prints from failing?</h2>
+          <ul>
+            <li><strong>Z-Offset</strong>: The tiny, critical gap between the nozzle and the bed. If this is wrong, your print won't stick or will get squashed.</li>
+            <li><strong>Supports</strong>: Temporary "scaffolding" for parts of your model that hang in mid-air (overhangs).</li>
+            <li><strong>Brim</strong>: A thin, flat layer of plastic around the base of your model to stop it from peeling off the bed.</li>
+          </ul>
         `,
         faq: [
-          { q: 'STL 和 OBJ 格式有什么区别？', a: 'STL 只包含几何形状，OBJ 可以包含颜色和纹理。3D 打印常用 STL。' },
-          { q: '填充率越高越好吗？', a: '不一定。20-30% 填充率已足够大多数用途。更高的填充增加时间和材料，但不一定增加强度。' }
+          { q: 'What is a "Benchy"?', a: 'It is a small toy boat (3DBenchy) used as the universal benchmark for 3D printers. If your Benchy looks clean, your machine is "dialed in".' },
+          { q: 'What does "Non-Manifold" mean?', a: 'It means your 3D model has "holes" or errors in the mesh that make it impossible for the slicer to understand. AI-generated models often need a "Repair" to become manifold.' }
         ]
       },
       {
         id: 'phase1-ep04',
-        title: 'Day 1 检查清单：成功完成首次打印',
+        title: 'What is the Day 1 checklist for a successful first print?',
         author: 'Xinyi Li',
         points: 20,
         skillBonus: 0,
         content: `
-          <h2>首次打印检查清单</h2>
-          <h3>硬件准备</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Don't just plug it in and pray. Most "Day 1" failures are caused by loose hardware or a dirty build plate. Follow this ritual to ensure your first "Benchy" doesn't turn into a ball of plastic yarn.</p>
+          
+          <h2>Is the hardware actually ready to rock?</h2>
+          <p>Before you flip the power switch, do a quick "sanity check" on the machine:</p>
           <ul>
-            <li>✅ 打印机已正确组装</li>
-            <li>✅ 热床已调平</li>
-            <li>✅ 喷嘴无堵塞</li>
-            <li>✅ 耗材已正确加载</li>
+            <li><strong>Tension the Belts</strong>: They should feel firm and "ping" like a low guitar string when plucked.</li>
+            <li><strong>Clean the Bed</strong>: Even if it's brand new, wipe the build plate with 90%+ Isopropyl Alcohol (IPA) to remove factory oils or fingerprints.</li>
+            <li><strong>The "Paper Test"</strong>: If your printer doesn't have auto-leveling, use a piece of A4 paper to set your Z-Offset until there is a slight "tug".</li>
           </ul>
-          <h3>软件准备</h3>
+          
+          <h2>What are the "Golden" software settings for a first try?</h2>
+          <p>Don't get fancy with your slicer on Day 1:</p>
           <ul>
-            <li>✅ 切片软件已安装</li>
-            <li>✅ 打印机配置文件已选择</li>
-            <li>✅ SD 卡或网络传输已就绪</li>
+            <li><strong>Material</strong>: Use the spool of PLA —it is the "King" of beginner materials. While some brands include a sample, many printers don't ship with filament anymore—always have a backup roll ready.</li>
+            <li><strong>Profiles</strong>: Use the "Standard" or "0.2mm Optimal" default profile in Bambu Studio or Cura.</li>
+            <li><strong>Speed</strong>: Don't floor it; keep your initial layer speed slow (around 20mm/s) to ensure it sticks.</li>
           </ul>
-          <h3>首次打印建议</h3>
-          <ul>
-            <li>选择简单的测试模型（如立方体、Benchy）</li>
-            <li>使用默认设置，不要急于调整</li>
-            <li>全程观察，了解打印过程</li>
-          </ul>
-          <h3>常见首次打印问题</h3>
-          <table>
-            <tr><th>问题</th><th>原因</th><th>解决</th></tr>
-            <tr><td>模型不粘床</td><td>热床未调平或太脏</td><td>重新调平，清洁热床</td></tr>
-            <tr><td>首层太薄/太厚</td><td>Z-offset 不对</td><td>调整 Z-offset</td></tr>
-            <tr><td>耗材不出</td><td>喷嘴堵塞或温度不够</td><td>清理喷嘴，检查温度</td></tr>
-          </table>
         `,
         faq: [
-          { q: '第一次打印失败了怎么办？', a: '99% 的问题是热床脏了或 Z-offset 不对。清洁热床，重新调平，再试一次。' },
-          { q: '推荐什么作为第一次打印？', a: '3D Benchy 是经典的测试模型，可以测试多种打印特性。' }
+          { q: 'What should my first print be?', a: 'Print the "3DBenchy" boat. It is designed to test every part of your printer, from overhangs to cooling, and it\'s the universal language of the community.' },
+          { q: 'My print is finished! How do I get it off the bed?', a: 'Wait for the bed to cool to room temperature. Most modern PEI plates will "pop" the print off as the metal shrinks. If it\'s still stuck, gently flex the steel plate or use a plastic scraper (spatula) to pry it loose.' },
+          { q: 'Should I use glue on the bed?', a: 'On a clean, modern PEI bed with correct Z-offset, you usually don\'t need it for PLA. If you are struggling with adhesion, re-clean the bed.' }
         ]
       },
       {
         id: 'phase1-ep05',
-        title: '必备工具：每个 3D 打印套件里需要什么？',
+        title: 'What are the "Must-Have" tools for every 3D printing kit?',
         author: 'Xinyi Li',
         points: 20,
         skillBonus: 0,
         content: `
-          <h2>3D 打印必备工具清单</h2>
-          <h3>基础工具</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Most printers ship with a "starter bag" of cheap tools, but they are usually the bare minimum. If you want to spend more time printing and less time struggling, you need a dedicated kit for cleaning, maintenance, and the inevitable "clog surgery".</p>
+          
+          <h2>What tools are essential for bed adhesion and cleaning?</h2>
+          <p>The secret to a perfect first layer isn't a "magic setting"—it's a clean surface.</p>
           <ul>
-            <li><strong>铲刀</strong>：从热床上取下打印件</li>
-            <li><strong>斜口钳</strong>：剪断耗材、移除支撑</li>
-            <li><strong>镊子</strong>：清理喷嘴、精细操作</li>
-            <li><strong>卡尺</strong>：测量尺寸</li>
+            <li><strong>Isopropyl Alcohol (IPA) 90%+</strong>: This is the "Gold Standard" for wiping down your PEI bed to remove oils and fingerprints.</li>
+            <li><strong>Microfiber Cloth</strong>: Use this to wipe the bed without leaving lint or scratches behind.</li>
+            <li><strong>Dish Soap</strong>: If IPA isn't working, a simple wash with warm water and basic dish soap is the best way to deep-clean a build plate.</li>
           </ul>
-          <h3>进阶工具</h3>
+          
+          <h2>What do I need for removing supports and post-processing?</h2>
+          <p>Once the print is done, the work isn't quite over:</p>
           <ul>
-            <li><strong>热床清洁剂</strong>：异丙醇、无绒布</li>
-            <li><strong>胶棒/美纹纸</strong>：增强附着力</li>
-            <li><strong>通针</strong>：清理堵塞的喷嘴</li>
-            <li><strong>耗材干燥箱</strong>：存储耗材</li>
+            <li><strong>Flush Cutters (Nippers)</strong>: These are mandatory for snipping filament and removing stubborn support structures.</li>
+            <li><strong>Deburring Tool</strong>: Perfect for cleaning up sharp edges or the "Elephant's Foot" on the bottom of your prints.</li>
+            <li><strong>Needle-nose Pliers</strong>: Essential for reaching into tight gaps to pull out tree supports.</li>
           </ul>
-          <h3>安全用品</h3>
+          
+          <h2>What tools are required for hardware maintenance?</h2>
           <ul>
-            <li>耐热手套</li>
-            <li>护目镜（处理树脂时）</li>
-            <li>烟雾报警器</li>
+            <li><strong>Digital Calipers</strong>: If you want to ensure your 20mm cube is actually 20mm, you need these for dimensional accuracy.</li>
+            <li><strong>Nozzle Cleaning Needles</strong>: For those minor clogs that don't require full "clog surgery".</li>
+            <li><strong>Allen Key Set</strong>: Most printers use metric hex bolts; a high-quality set will prevent you from stripping screws.</li>
           </ul>
         `,
         faq: [
-          { q: '这些工具可以在哪里买到？', a: 'Amazon、淘宝都有套装出售。也可以单独购买。' },
-          { q: '必须买耗材干燥箱吗？', a: '不是必须，但如果你住在潮湿地区或使用 PETG/ABS，强烈推荐。' }
+          { q: 'Do I really need a glue stick?', a: 'For PLA on a clean PEI bed, usually no. Glue is often used as a "release agent" for materials like PETG so they don\'t stick too well and damage the bed.' },
+          { q: 'Should I buy a 3D printing "Tool Kit" bundle?', a: 'Many "all-in-one" bundles on Amazon are filled with low-quality junk. You are better off buying a few high-quality basics like IPA, flush cutters, and a deburring tool separately.' }
         ]
       }
     ]
@@ -189,234 +192,316 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase2-ep01',
-        title: 'Meshy 如何改变非设计师的游戏规则？',
+        title: 'How does Meshy change the game for non-designers?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>AI 3D 建模的革命</h2>
-          <p>Meshy 让任何人都能创建 3D 模型，无需专业设计技能。</p>
-          <h3>传统建模 vs AI 建模</h3>
-          <table>
-            <tr><th>传统建模</th><th>Meshy AI</th></tr>
-            <tr><td>学习周期：数月到数年</td><td>学习周期：几分钟</td></tr>
-            <tr><td>需要空间思维</td><td>只需要描述或图片</td></tr>
-            <tr><td>软件成本高</td><td>免费或低成本</td></tr>
-          </table>
-          <h3>Meshy 的核心能力</h3>
-          <ul>
-            <li><strong>Text to 3D</strong>：用文字描述生成模型</li>
-            <li><strong>Image to 3D</strong>：从图片创建模型</li>
-            <li><strong>AI Texturing</strong>：为模型添加纹理</li>
-            <li><strong>AI Animation</strong>：让角色动起来</li>
-          </ul>
-          <h3>适合 3D 打印的工作流</h3>
-          <ol>
-            <li>使用 Text-to-3D 或 Image-to-3D 生成模型</li>
-            <li>下载 STL 或 OBJ 格式</li>
-            <li>在切片软件中准备打印</li>
-            <li>开始打印！</li>
-          </ol>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>For years, the biggest barrier in 3D printing hasn't been hardware, but content creation. If you couldn't master complex CAD software, you were stuck printing files designed by others. However, <strong>Meshy changes this dynamic entirely</strong>. Powered by our latest Meshy 6, we transform you from a passive "downloader" into an active "creator." By bypassing the steep learning curve of traditional modeling, Meshy enables non-designers to turn imagination directly into physical reality.</p>
+          
+          <h2>Image to 3D: How Can I Turn a Sketch into a Printable Statue?</h2>
+          <p>The most transformative workflow for beginners is Meshy's "Image to 3D" feature. Traditionally, turning a 2D idea into a 3D object required hours of digital sculpting. With Meshy, you simply upload a reference—whether it's a rough sketch you drew, a piece of concept art, or an AI-generated image.</p>
+          <p>Meshy can interpret the depth, form, and structure of your 2D input to construct a detailed 3D model in minutes. <strong>Reliability is key here</strong>: according to our testing, Meshy 6 has increased the printable output success rate from 5% to over 90%. This means you can generate your own custom miniatures, props, or decorations without touching a single polygon, confident that the result will actually print.</p>
+          
+          <h2>Multi-Color Printing: How Do I Get Colorful Prints Without Manual Painting?</h2>
+          <p>Creating vibrant, multi-colored models usually involves a painful choice: tedious hand-painting after printing, or complex "painting" within slicing software. Meshy eliminates this hassle by bridging the gap between AI texturing and physical filament.</p>
+          <p>Our "Multi-Color Printing" feature automatically analyzes your model's texture and intelligently segments it into distinct color zones. Instead of spending hours manually coloring vertices in a slicer, Meshy maps the dominant colors directly to filament slots and exports a print-ready 3MF file. This automation allows non-designers to achieve professional-looking, multi-color prints instantly.</p>
         `,
         faq: [
-          { q: 'Meshy 生成的模型质量如何？', a: 'Meshy 6 的可打印输出比例已从 5% 提升至 90% 以上，质量持续提升。' },
-          { q: '免费用户有限制吗？', a: 'Meshy 提供免费积分，足够体验核心功能。付费用户获得更多积分和功能。' }
+          { q: 'Can I print Meshy models directly?', a: 'According to our internal testing, Meshy 6 has increased the printable output success rate from 5% to over 90%. Most generated models are ready for the slicer immediately. However, for specific cases (e.g. extremely delicate features or thin floating parts), you may still need to perform some manual modeling to ensure the physical object is durable enough.' },
+          { q: 'Does the Multi-Color feature work on standard 3D printers?', a: 'The automatic coloring feature is designed for multi-material printers (like Bambu Lab AMS). However, if you have a standard single-color printer, you can still use Meshy to generate the geometry (shape) and print it perfectly in one color.' }
         ]
       },
       {
         id: 'phase2-ep02',
-        title: 'Meshy 可打印性的 Dos and Don\'ts',
+        title: 'What are the Dos and Don\'ts for Meshy printability?',
         author: 'Xinyi Li',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>Meshy 可打印性指南</h2>
-          <h3>✅ Dos - 推荐做法</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Meshy can dream up anything, but your printer lives in the real world with gravity. If you want to avoid a bed full of plastic spaghetti, you need to "design for the nozzle."</p>
+          
+          <h2>🎯 The Golden Rule: Stability is King</h2>
+          <p>Successful printing starts in the generation phase, not the slicer. For a high-success "set it and forget it" experience, follow the <strong>Flat & Low</strong> principle.</p>
+          
+          <h2>✅ The "High Success" Profile (Green Light)</h2>
+          <p>Target these traits when prompting in Meshy to ensure a "Banger" print:</p>
           <ul>
-            <li><strong>使用清晰的提示词</strong>：描述越具体，结果越好</li>
-            <li><strong>选择 Standard 模型类型</strong>：更适合打印</li>
-            <li><strong>检查模型厚度</strong>：确保没有过薄的部件</li>
-            <li><strong>下载前预览</strong>：检查是否有明显的缺陷</li>
-            <li><strong>使用 Meshy 的修复功能</strong>：自动修复常见问题</li>
+            <li><strong>Large Footprint</strong>: Opt for models with a flat base or a wide contact area (think coasters, busts, or thick-legged characters). This ensures maximum bed adhesion.</li>
+            <li><strong>Dense Geometry</strong>: Lean toward "solid" or stylized low-poly designs. They are structurally sound and handle infill better.</li>
+            <li><strong>Gentle Slopes</strong>: Features that slope up gradually (less than 45°) are a dream to print and often don't even need supports.</li>
           </ul>
-          <h3>❌ Don'ts - 避免的做法</h3>
+          
+          <h2>❌ The "Spaghetti" Profile (Red Light)</h2>
+          <p>These traits are "Printer Kryptonite"—avoid them unless you're a support-material wizard:</p>
           <ul>
-            <li><strong>不要生成过于复杂的模型</strong>：细节太多会导致打印失败</li>
-            <li><strong>不要忽略悬空部分</strong>：需要添加支撑</li>
-            <li><strong>不要使用过低的分辨率</strong>：会影响打印质量</li>
-            <li><strong>不要跳过切片预览</strong>：检查是否有问题</li>
+            <li><strong>Spider-Legs</strong>: Tiny, free-floating limbs or thin antennas. They tend to snap during printing or support removal.</li>
+            <li><strong>Acute Overhangs</strong>: Massive parts hanging in mid-air with nothing beneath them. These require heavy "scaffolding" (supports) and leave a messy surface finish.</li>
+            <li><strong>Hollow/Shell Gaps</strong>: AI models with weird internal voids can confuse your slicer, leading to "ghost" layers that collapse.</li>
           </ul>
-          <h3>打印友好型提示词技巧</h3>
-          <table>
-            <tr><th>不推荐</th><th>推荐</th></tr>
-            <tr><td>"一个很酷的角色"</td><td>"一个站立的卡通机器人，简单的几何形状，适合 3D 打印"</td></tr>
-            <tr><td>"美丽的花朵"</td><td>"一朵简化的玫瑰花，实心花瓣，无细丝结构"</td></tr>
-          </table>
+          
+          <h2>💡 Pro-Tip: The "Base-First" Strategy</h2>
+          <p>If you have a complex AI model you really want to print, don't fight gravity—bypass it.</p>
+          <p>Try our "Add Base" feature in Meshy. It's the ultimate "cheat code" for intricate designs like miniatures and figurines. We provide dozens of pre-set bases to:</p>
+          <ul>
+            <li><strong>Prevent Failures</strong>: Eliminate issues caused by uneven or rounded bottoms.</li>
+            <li><strong>Improve Quality</strong>: Give your printer a solid foundation for the entire build.</li>
+          </ul>
         `,
         faq: [
-          { q: 'Meshy 模型需要修复才能打印吗？', a: '建议使用 Meshy 内置的修复功能或切片软件的修复工具，以确保模型可打印。' },
-          { q: '如何判断模型是否可打印？', a: '检查模型是否有孔洞、法线方向是否正确、壁厚是否足够。切片软件通常会警告这些问题。' }
+          { q: 'Why doesn\'t my physical print look as detailed as the 3D view?', a: 'FDM printers have physical limits based on nozzle size (usually 0.4mm). While Meshy 6 generates sculpting-level detail, extremely tiny features may be "lost" or simplified by the slicer to maintain structural integrity during the print process.' }
         ]
       },
       {
         id: 'phase2-ep03',
-        title: 'Text-to-3D 工作流：如何写出好的提示词？',
+        title: 'Text-to-3D Workflow: How to craft banger prompts to generate printable models?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>Text-to-3D 提示词技巧</h2>
-          <h3>提示词结构</h3>
-          <p>一个好的提示词包含以下元素：</p>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Crafting effective prompts is key to unlocking Meshy's full potential. When it comes to 3D printing, the words you choose define not just the aesthetic, but the structural integrity of your model. Master the art of the "banger prompt" to generate solid, print-ready 3D assets without wasting time on failed prints.</p>
+          
+          <h2>Workflow: How to turn texts into 3D models?</h2>
           <ol>
-            <li><strong>主体</strong>：你想要生成什么？</li>
-            <li><strong>风格</strong>：写实、卡通、低多边形？</li>
-            <li><strong>姿态/姿势</strong>：站立、坐着、A-pose？</li>
-            <li><strong>细节</strong>：颜色、材质、配件</li>
-            <li><strong>打印友好</strong>：实心、无细丝</li>
+            <li><strong>Step 1: Select Model</strong> - Open the Meshy Workspace and choose Text to 3D mode to start your project.</li>
+            <li><strong>Step 2: Enter Prompt</strong> - Paste your prompt into the input box.</li>
+            <li><strong>Step 3: Generate</strong> - Hit the Generate button and watch your text transform into a 3D preview in seconds.</li>
+            <li><strong>Step 4: Retry (If Needed)</strong> - If you are not satisfied with the result, you can regenerate the model.</li>
           </ol>
-          <h3>示例提示词</h3>
-          <table>
-            <tr><th>场景</th><th>提示词示例</th></tr>
-            <tr><td>角色</td><td>"A cute cartoon cat sitting on a ball, simple shapes, solid design, suitable for 3D printing"</td></tr>
-            <tr><td>物品</td><td>"A medieval treasure chest with rounded edges, low poly style, solid bottom"</td></tr>
-            <tr><td>装饰品</td><td>"A geometric flower vase, minimal design, thick walls, no overhangs"</td></tr>
-          </table>
-          <h3>提示词优化技巧</h3>
+          
+          <h2>✅ The Winning Formula: Subject + Physics + Style</h2>
           <ul>
-            <li>使用英文提示词效果更好</li>
-            <li>添加 "suitable for 3D printing" 或 "solid design"</li>
-            <li>避免描述过于复杂的细节</li>
-            <li>指定 "standing pose" 或 "A-pose" 用于角色</li>
+            <li><strong>Define the Core Subject</strong>: First, describe your character, creature, or object clearly and concisely to capture its essence.</li>
+            <li><strong>Add "Physical" Mass</strong>: Once the subject is defined, give it weight.
+              <ul>
+                <li><em>Keywords</em>: Chunky, Thick-walled, Sturdy, Blocky, Heavy.</li>
+                <li><em>Example</em>: "A chunky robot with thick armor."</li>
+              </ul>
+            </li>
+            <li><strong>Lock in a Solid Style</strong>: Choose aesthetics that naturally simplify geometry and close gaps.
+              <ul>
+                <li><em>Best Styles</em>: Low-poly, Voxel, Chibi, Totem, Stone Carving.</li>
+                <li><em>Material Hints</em>: Adding words like Jade, Marble, or Wood encourages the AI to create continuous, watertight surfaces.</li>
+              </ul>
+            </li>
+            <li><strong>Ground the Pose</strong>: Gravity is non-negotiable.
+              <ul>
+                <li><em>Keywords</em>: Standing firmly, Seated base, T-pose, Flat bottom.</li>
+              </ul>
+            </li>
+          </ul>
+          
+          <h2>❌ The "Printer-Killer" Traps (What to Avoid)</h2>
+          <p>Avoid these triggers that confuse slicers or create physical failures:</p>
+          <ul>
+            <li><strong>Gravity Defiers</strong>: Words like Flying, Levitating, or Jumping create disconnected parts that will collapse on the print bed.</li>
+            <li><strong>Intangible Effects</strong>: Visual effects like Fire, Smoke, Magic aura, or Blur turn into messy, unprintable noise in 3D geometry.</li>
+            <li><strong>Slicer Confusers</strong>: Avoid Hollow, Transparent, Glass, or Internal gears. These terms often create weird internal cavities or non-manifold geometry that ruin the print structure.</li>
+            <li><strong>Fragile Details</strong>: Steer clear of Thin wires, Long flowing hair, or Insect legs unless you are an expert at removing supports.</li>
           </ul>
         `,
         faq: [
-          { q: '中文提示词能用吗？', a: 'Meshy 支持中文，但英文提示词通常效果更好。可以使用翻译工具辅助。' },
-          { q: '生成的模型不满意怎么办？', a: '调整提示词重新生成，或使用 Image-to-3D 从参考图生成。' }
+          { q: 'Why did my generated model collapse when printing?', a: 'This usually happens when prompts use words like flying or smoke, creating disconnected parts. Instead, use grounding terms like standing firmly or flat bottom to ensure the model has a solid, continuous base.' },
+          { q: 'Why does my model look messy despite a detailed prompt?', a: 'Visual effect words like glowing, misty confuse 3D generators, often creating noise instead of shapes. Focus on physical structure and use keywords like solid, carved, or blocky to help Meshy generate clear, printable geometry.' }
         ]
       },
       {
         id: 'phase2-ep04',
-        title: 'Image-to-3D 工作流：如何选择合适的图片？',
+        title: 'Image-to-3D Workflow: How to Pick Right Images for 3D Generation?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>Image-to-3D 图片选择指南</h2>
-          <h3>适合的图片类型</h3>
-          <ul>
-            <li><strong>清晰的前景主体</strong>：背景简洁，主体明确</li>
-            <li><strong>单一视角</strong>：正视图效果最好</li>
-            <li><strong>良好的光照</strong>：明暗对比清晰</li>
-            <li><strong>适中的细节</strong>：不要太复杂也不要太简单</li>
-          </ul>
-          <h3>不适合的图片类型</h3>
-          <ul>
-            <li>❌ 背景杂乱的图片</li>
-            <li>❌ 多个重叠的物体</li>
-            <li>❌ 透视变形严重的图片</li>
-            <li>❌ 过于扁平的设计（如 logo）</li>
-          </ul>
-          <h3>图片准备技巧</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Turning a photo into a fully realized 3D model might sound like magic — but with Meshy's Image-to-3D feature, it's just a few clicks away.</p>
+          
+          <h2>How to turn photos into 3D models?</h2>
           <ol>
-            <li>使用图片编辑工具去除背景</li>
-            <li>调整为正方形比例（推荐 1024x1024）</li>
-            <li>确保主体居中</li>
-            <li>保存为 PNG 或 JPG 格式</li>
+            <li><strong>Step 1: Go to Workspace</strong> - Choose the Image-to-3D feature in Meshy.</li>
+            <li><strong>Step 2: Upload Your Image</strong> - Select a high-resolution image with a standard front view.</li>
+            <li><strong>Step 3: Generate</strong> - Click "Generate" and watch Meshy turn your 2D input into a high-quality 3D model in seconds.</li>
+            <li><strong>Step 4: Retry if Needed</strong> - If you are not happy with the first result, don't worry—Meshy allows you to regenerate your model.</li>
           </ol>
+          
+          <h2>What kind of photos work best for 3D printing?</h2>
+          <p>If you're a beginner and want to know what kind of images are easiest to use for good 3D printing results, here are some helpful tips:</p>
+          <ul>
+            <li><strong>Standard Front View</strong>: Use straightforward, front-facing angles. Clear orientation allows the model to capture shapes and proportions accurately.</li>
+            <li><strong>Clean & Simple Backgrounds</strong>: White or minimal backgrounds keep the object distinct, making generation easier and results more precise.</li>
+            <li><strong>Simple & Clear Details</strong>: Simplified details help the 3D generator produce accurate models faster and prevent messy geometry.</li>
+            <li><strong>High Resolution & Sharpness</strong>: Well-lit, sharp images preserve surface details and textures, which improves 3D model quality.</li>
+            <li><strong>Chibi Style</strong>: Chibi-style characters are ideal, as their shapes are easier for the 3D generator to interpret.</li>
+            <li><strong>Thick Limbs & Strong Structures</strong>: Select images where characters or objects have thick arms, legs, or prominent parts.</li>
+          </ul>
+          
+          <h2>Which image types should you avoid?</h2>
+          <ul>
+            <li><strong>Text on the Image</strong>: Avoid images containing text, as letters can confuse the 3D generator.</li>
+            <li><strong>Unclear Object vs. Background</strong>: Do not use images where the object blends into the background.</li>
+            <li><strong>Excessive Environmental Effects</strong>: Avoid smoke, fog, magical particles, or any effects that obscure the object's form.</li>
+            <li><strong>Long Hair, Fur, or Fine Structures</strong>: Images with long hair, fur, or delicate hair-like parts are difficult for the generator to interpret accurately.</li>
+          </ul>
         `,
         faq: [
-          { q: '透明背景的图片效果更好吗？', a: '是的！透明背景可以帮助 Meshy 更准确地识别主体。' },
-          { q: '多角度图片可以一起使用吗？', a: 'Meshy 的 Multi-view 功能支持多角度输入，可以生成更准确的 3D 模型。' }
+          { q: 'What should I do if my object has asymmetrical details that aren\'t showing up correctly?', a: 'If a model looks too symmetrical or is missing unique features on one side, try using the Image Workspace to generate a slightly angled view or a "Three-Quarter" view before hitting the final 3D generate button.' },
+          { q: 'Can I turn a hand-drawn sketch into a 3D model for printing?', a: 'Yes, Meshy is excellent at interpreting 2D sketches. For the best results, ensure your sketch has bold, clean outlines and is drawn from a straight-on perspective.' }
         ]
       },
       {
         id: 'phase2-ep05',
-        title: 'AI 模型修复：如何修复 STL 文件？',
+        title: 'AI Model Repair: How to Fix Your STL Files for a Flawless Print?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>模型修复指南</h2>
-          <h3>常见的模型问题</h3>
-          <table>
-            <tr><th>问题</th><th>描述</th><th>影响</th></tr>
-            <tr><td>孔洞</td><td>模型不封闭</td><td>无法正确切片</td></tr>
-            <tr><td>法线翻转</td><td>面朝向错误</td><td>打印方向异常</td></tr>
-            <tr><td>重叠面</td><td>面相互交叉</td><td>切片错误</td></tr>
-            <tr><td>非流形几何</td><td>边被多个面共享</td><td>无法打印</td></tr>
-          </table>
-          <h3>Meshy 内置修复</h3>
-          <p>Meshy 提供自动修复功能，可以处理大多数常见问题。</p>
-          <h3>外部修复工具</h3>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>Before sending the amazing model you created in Meshy straight to the printer, there's one small but important technical detail to check: <strong>non-manifold edges</strong>.</p>
+          <p>The good news? Fixing this is easier than it sounds. Here is a quick, beginner-friendly guide to making your model "watertight" and ready for print.</p>
+          
+          <h2>Step 1: Download your Masterpiece</h2>
+          <p>Go to your model page in Meshy. Click the green download icon in the bottom-right corner, select <strong>STL format</strong>, and click Download. This is the standard file type for 3D printing and the most compatible format for repair tools.</p>
+          
+          <h2>Step 2: Check for Slicer Red Flags</h2>
+          <p>Open your favorite slicer (like Bambu Studio, Cura, or OrcaSlicer) and drop your file in. Keep a close eye on the bottom right corner for a pop-up warning.</p>
+          <p>📌 If you see an error saying <strong>"Non-manifold edges detected"</strong>, stop right there! For a clean, professional print, it's better to fix the model's geometry before hitting "Slice".</p>
+          
+          <h2>Step 3: One-Click Fix</h2>
+          <p>Head over to <strong>Formware's Online STL Repair</strong>. You can use this free online tool without hassle to fix your STL files quickly:</p>
           <ul>
-            <li><strong>Windows 3D Builder</strong>：免费的简单修复工具</li>
-            <li><strong>Meshmixer</strong>：Autodesk 免费，功能强大</li>
-            <li><strong>Blender</strong>：免费开源，学习曲线较陡</li>
+            <li>Upload your original STL file.</li>
+            <li>The tool will automatically scan for holes, flipped faces, and those pesky non-manifold edges.</li>
+            <li>Within minutes, the tool patches every flaw, turning your mesh into a perfectly solid, print-ready file.</li>
           </ul>
+          
+          <h2>Step 4: Download & Slice</h2>
+          <p>Once the repair is finished, download the fixed version of your model. Toss this new file back into your slicer. You'll notice the warnings are gone!</p>
+          <p>Now you can safely hit "Slice," send it to your printer, and watch your Meshy creation come to life without any weird gaps or structural glitches.</p>
         `,
         faq: [
-          { q: '所有模型都需要修复吗？', a: '不一定。Meshy 6 生成的模型大多数可以直接打印，但建议在切片软件中检查。' },
-          { q: '修复会影响模型质量吗？', a: '修复过程可能会轻微改变模型，但通常影响很小。' }
+          { q: 'What exactly is a "non-manifold" edge, and why does it ruin my print?', a: 'It is a physical impossibility—like a shape with zero thickness or holes. Slicers can\'t distinguish "inside" from "outside," causing skipped layers or messy "spiderwebs."' },
+          { q: 'Will repairing my STL file reduce the level of detail I created in Meshy?', a: 'Generally, no. Standard repair tools focus on fixing the "logic" of the mesh (closing holes and merging edges) rather than simplifying it.' }
         ]
       },
       {
         id: 'phase2-ep06',
-        title: 'AI 纹理：如何为 3D 模型添加纹理？',
+        title: 'AI Texturing: How to Add Textures to 3D Models in Meshy?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>AI 纹理生成</h2>
-          <h3>什么是 AI 纹理？</h3>
-          <p>AI 纹理允许你为现有的 3D 模型自动生成逼真的材质和颜色。</p>
-          <h3>纹理生成流程</h3>
-          <ol>
-            <li>上传或选择一个 3D 模型</li>
-            <li>选择 "AI Texturing" 功能</li>
-            <li>输入纹理描述提示词</li>
-            <li>生成并预览结果</li>
-            <li>下载带纹理的模型</li>
-          </ol>
-          <h3>纹理提示词示例</h3>
-          <table>
-            <tr><th>模型类型</th><th>纹理提示词</th></tr>
-            <tr><td>机器人</td><td>"Metallic silver robot with blue glowing details, sci-fi style"</td></tr>
-            <tr><td>角色</td><td>"Cute cartoon character with colorful clothes, soft shading"</td></tr>
-            <tr><td>建筑</td><td>"Old stone castle wall, moss and cracks, medieval style"</td></tr>
-          </table>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>If you want to print vibrant, multi-color models, Meshy's AI Texturing is a feature you can't miss! With just one click, it generates high-quality textures for your models, making multi-color printing fast, flexible, and effortless.</p>
+          
+          <h2>Which types of 3D models can you texture?</h2>
+          <p>There are two types of models that can be textured:</p>
+          <ul>
+            <li><strong>Models generated with Meshy</strong>: Select a model in your generation history. You can select a model with no texture or a textured model, but stylized and animated models are not supported for texturing.</li>
+            <li><strong>Models uploaded by you</strong>: You can go to Workspace, click AI Texturing to upload your model, or click the upload button next to New Model on the model generation page.</li>
+          </ul>
+          
+          <h2>How to apply the texture you want?</h2>
+          <p>Once your model is loaded, navigate to the Texture tab. You have two ways to apply a texture:</p>
+          
+          <h3>Image Input: How to use reference photos for 3D textures?</h3>
+          <p>Upload reference images in the Image Input section to guide the texture style, materials, or color details.</p>
+          <p>✨ Tip: You can choose whether to enable Generate PBR Maps based on the effect you want to achieve.</p>
+          <p>❗ However, PBR effects cannot be printed by regular 3D printers.</p>
+          
+          <h3>Text Input: How to write prompts for 3D textures?</h3>
+          <p>Enter a text prompt in the Text Input field to describe the texture you want, such as materials, style, or surface details. If you're unsure what to write, use our <strong>Texture Helper</strong> to instantly transform simple ideas into professional prompts.</p>
+          <p>Once everything is ready, click <strong>Texture</strong>. In just a few seconds, you'll receive a textured 3D model.</p>
+          <p>Satisfied with the overall look but want to tweak a specific detail? You don't have to restart! You can fine-tune colors, patterns, and materials using <strong>Texture Edit</strong>.</p>
         `,
         faq: [
-          { q: '纹理会影响 3D 打印吗？', a: '纹理主要用于数字展示。对于 FDM 打印，颜色需要通过多色打印或后期上色实现。' },
-          { q: '可以导出纹理吗？', a: '可以！Meshy 支持导出带纹理的模型，包括 OBJ + MTL + 纹理图。' }
+          { q: 'Does the AI texture follow my model\'s shape?', a: 'Yes! Meshy is "geometry-aware," meaning it recognizes surface features. It intelligently places textures based on your model\'s contours.' },
+          { q: 'Can I re-texture a model multiple times to try different styles?', a: 'Absolutely! Select any textured model from your history to apply new prompts or images. This is perfect for creating seasonal variations of the same character without re-modeling.' }
         ]
       },
       {
         id: 'phase2-ep07',
-        title: '纹理编辑：如何精细化调整纹理？',
+        title: 'Texture Edit: How to Refine and Customize Your 3D Model Textures?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>纹理编辑工作流</h2>
-          <p>Next - 详细内容即将更新</p>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          <p>The Texture Edit tool lets you customize the look of 3D models you've already generated. You can change colors, add patterns, or apply entirely new textures to specific parts of your model.</p>
+          
+          <h2>1️⃣ Navigate to Texture Edit</h2>
+          <p>After your model has been textured, you'll see the Texture Edit icon at the bottom center of the screen.</p>
+          <ul>
+            <li>By default, you'll enter <strong>Free Camera Mode</strong>. Whenever you want to adjust the size or rotation of the model, you need to return to Free Camera Mode.</li>
+            <li>The left panel displays your model along with a history of edits as you make changes.</li>
+          </ul>
+          <p>📌 Note: The Texture Edit view shows the original texture, not the PBR preview, even if PBR was previously enabled.</p>
+          
+          <h2>2️⃣ Edit the Texture</h2>
+          <p>Texture Edit supports both <strong>AI Texture Edit</strong> and manual tools for precise control.</p>
+          
+          <h3>How to Edit Textures Using AI?</h3>
+          <ol>
+            <li><strong>Choose the edit region</strong>: You can use either a brush or lasso tool to choose which part you want to edit.</li>
+            <li><strong>Prompt Input</strong>: Type a clear description of the new look in the prompt box.
+              <ul>
+                <li><em>Be specific</em>: Instead of "change to a different texture," try "a shiny, bronze texture with intricate carvings."</li>
+                <li><em>Use descriptive words</em>: Mention colors, materials, and styles.</li>
+              </ul>
+            </li>
+            <li><strong>Adjust Settings</strong>:
+              <ul>
+                <li><strong>Import Original Prompt</strong>: Start from your original texture prompt and refine it.</li>
+                <li><strong>Image Reference</strong>: Upload reference images to guide the texture.</li>
+                <li><strong>Prompt Influence Strength</strong>: Control how strongly your prompt affects the result.</li>
+              </ul>
+            </li>
+            <li><strong>Retexture</strong>: Click the Retexture button to create a new texture.</li>
+          </ol>
+          
+          <h3>How to Edit Textures Manually?</h3>
+          <ul>
+            <li><strong>Brush Tool</strong>: Healing Tool, Stamp Tool, Solid Paint Tool.</li>
+            <li><strong>Decal Tool</strong>: Apply your own decals or texture images to the surface.</li>
+          </ul>
+          
+          <h2>3️⃣ Apply or Discard Changes</h2>
+          <p>If you like the new texture, click <strong>Apply</strong> to save the changes. If not, click the trash can icon and try again.</p>
+          
+          <h2>4️⃣ Save to Model</h2>
+          <p>Once you're happy with all your changes, click the <strong>Save to Model</strong> button to create a new version of your textured 3D model.</p>
         `,
         faq: [
-          { q: '如何调整纹理细节？', a: 'Next - 即将更新' }
+          { q: 'After multiple edits, can I revert to a previous step in the history?', a: 'Yes. The left panel keeps a record of your edit history, allowing you to return to any previous step and continue editing.' },
+          { q: 'Does saving overwrite my original model?', a: 'No. Clicking Save to Model creates a new textured version. Your original model remains unchanged.' }
         ]
       },
       {
         id: 'phase2-ep08',
-        title: '纹理助手：如何优化纹理提示词？',
+        title: 'Texture Helper: How to Improve Your Texture Prompts with Meshy\'s AI Helper?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 10,
         content: `
-          <h2>纹理助手功能</h2>
-          <p>Next - 详细内容即将更新</p>
+          <p class="update-date">Last Updated: Feb 2026</p>
+          
+          <h2>What is Texture Helper?</h2>
+          <p>When writing prompts, it's easy to get stuck—your description might be too vague, the colors off, or the style just won't come through. Don't worry—let <strong>Texture Helper</strong> handle it!</p>
+          <p>Texture Helper is an AI assistant that guides you in crafting and refining prompts, helping you achieve the exact textures you want with ease.</p>
+          
+          <h2>What can you do with Texture Helper?</h2>
+          <ul>
+            <li><strong>Batch Prompt</strong> – Generate multiple texture prompts at once</li>
+            <li><strong>Change Prompt Style</strong> – Quickly adjust the visual style</li>
+            <li><strong>Image to Prompt</strong> – Convert reference images into usable prompts</li>
+            <li><strong>Expand Prompt</strong> – Automatically enrich simple prompts with more detail</li>
+          </ul>
+          <p>You can also choose <strong>Create Image</strong> to generate reference images directly from your prompt.</p>
         `,
         faq: [
-          { q: '纹理助手是什么？', a: 'Next - 即将更新' }
+          { q: 'Can I edit the prompt after Texture Helper generates it?', a: 'Yes. The prompt appears in the text field, and you can manually add, delete, or modify any specific keywords before clicking "Generate" to ensure the final result matches your exact needs.' },
+          { q: 'Does Texture Helper cost extra credits to use?', a: 'No. Texture Helper is a built-in tool designed to assist with prompt engineering. You only use credits when you proceed to generate the actual 3D texture.' }
         ]
       }
     ]
@@ -430,148 +515,48 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase3-ep01',
-        title: '为什么 90% 的打印应该从 PLA 开始？',
+        title: 'Why 90% of Your Prints Should Start With PLA Basic or PLA Matte?',
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `
-          <h2>PLA：最佳入门材料</h2>
-          <h3>PLA 的优势</h3>
-          <ul>
-            <li><strong>易打印</strong>：温度范围宽，不易翘边</li>
-            <li><strong>安全</strong>：无毒，烟雾少</li>
-            <li><strong>便宜</strong>：最经济的材料选择</li>
-            <li><strong>颜色丰富</strong>：多种颜色和效果可选</li>
-          </ul>
-          <h3>PLA 变体</h3>
-          <table>
-            <tr><th>类型</th><th>特点</th><th>用途</th></tr>
-            <tr><td>PLA Basic</td><td>标准 PLA</td><td>日常打印</td></tr>
-            <tr><td>PLA Matte</td><td>哑光表面</td><td>艺术打印</td></tr>
-            <tr><td>PLA Silk</td><td>丝绸光泽</td><td>装饰品</td></tr>
-            <tr><td>PLA Marble</td><td>大理石纹理</td><td>雕塑、花瓶</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: 'PLA 打印温度是多少？', a: '通常 190-220°C，热床 50-60°C。具体参考材料商推荐。' },
-          { q: 'PLA 需要热床吗？', a: '不是必须，但强烈推荐。热床可以改善附着力，减少翘边。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: 'PLA 适合什么场景？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase3-ep02',
-        title: '特殊 PLA 耗材：Silk、Marble、Wood、夜光怎么打？',
+        title: 'Speciality PLA Filament: How Do I Print PLA Silk, Marble, Wood, and Glow-in-the-Dark?',
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `
-          <h2>特殊 PLA 打印指南</h2>
-          <h3>PLA Silk（丝绸 PLA）</h3>
-          <ul>
-            <li>打印温度：200-230°C</li>
-            <li>热床温度：50-60°C</li>
-            <li>注意：打印速度稍慢，避免拉丝</li>
-          </ul>
-          <h3>PLA Marble（大理石 PLA）</h3>
-          <ul>
-            <li>打印温度：200-220°C</li>
-            <li>热床温度：50-60°C</li>
-          </ul>
-          <h3>PLA Wood（木质 PLA）</h3>
-          <ul>
-            <li>打印温度：190-220°C</li>
-            <li>注意：可打磨、可上色，喷嘴磨损较大</li>
-          </ul>
-          <h3>夜光 PLA</h3>
-          <ul>
-            <li>打印温度：200-220°C</li>
-            <li>注意：需要"充电"（光照）才能发光</li>
-          </ul>
-        `,
-        faq: [
-          { q: '特殊 PLA 可以混用吗？', a: '不建议。不同材料特性不同，换料时建议清理喷嘴。' },
-          { q: '木质 PLA 会堵塞喷嘴吗？', a: '可能。建议使用 0.6mm 以上喷嘴，定期检查。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '特殊 PLA 如何打印？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase3-ep03',
-        title: '什么时候应该从 PLA 升级到 PETG？',
+        title: 'When Should I Switch from PLA to PETG for 3D Printing?',
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `
-          <h2>PETG：PLA 的升级选择</h2>
-          <h3>PETG vs PLA</h3>
-          <table>
-            <tr><th>特性</th><th>PLA</th><th>PETG</th></tr>
-            <tr><td>强度</td><td>中等</td><td>更高</td></tr>
-            <tr><td>韧性</td><td>脆</td><td>有弹性</td></tr>
-            <tr><td>耐热</td><td>~60°C</td><td>~80°C</td></tr>
-            <tr><td>打印难度</td><td>简单</td><td>稍难</td></tr>
-          </table>
-          <h3>PETG 打印设置</h3>
-          <ul>
-            <li>喷嘴温度：230-250°C</li>
-            <li>热床温度：70-80°C</li>
-            <li>关闭零件冷却风扇或降低速度</li>
-          </ul>
-        `,
-        faq: [
-          { q: 'PETG 更难打印吗？', a: '稍难一些。主要是容易拉丝和翘边。调整好参数后可以获得很好的效果。' },
-          { q: '可以用 PETG 打印所有东西吗？', a: '可以，但 PLA 更适合展示类模型，PETG 更适合功能件。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '什么时候应该用 PETG？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase3-ep04',
-        title: '如何干燥潮湿的耗材？',
+        title: 'How Do I Dry Wet 3D Printing Filament and Prevent Moisture Damage?',
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `
-          <h2>耗材干燥指南</h2>
-          <h3>潮湿耗材的症状</h3>
-          <ul>
-            <li>打印时冒泡、发出"滋滋"声</li>
-            <li>表面粗糙，有疤痕</li>
-            <li>层间附着力下降</li>
-          </ul>
-          <h3>干燥方法</h3>
-          <table>
-            <tr><th>方法</th><th>温度</th><th>时间</th></tr>
-            <tr><td>烤箱</td><td>45-55°C</td><td>4-6 小时</td></tr>
-            <tr><td>食品脱水机</td><td>50°C</td><td>4-6 小时</td></tr>
-            <tr><td>专用干燥箱</td><td>按说明</td><td>按说明</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: '所有耗材都需要干燥吗？', a: 'PLA 较不敏感，PETG、ABS、尼龙等对湿度更敏感，建议打印前干燥。' },
-          { q: '耗材可以多次干燥吗？', a: '可以。但每次加热都会略微影响材料性能，不要过度干燥。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何干燥耗材？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase3-ep05',
-        title: '如何减少 3D 打印浪费？',
+        title: 'How Can I Reduce 3D Printing Waste and Print More Sustainably?',
         author: 'Weihan Yang',
         points: 30,
         skillBonus: 0,
-        content: `
-          <h2>可持续 3D 打印</h2>
-          <h3>减少浪费的方法</h3>
-          <ul>
-            <li><strong>优化填充</strong>：20-30% 通常足够</li>
-            <li><strong>减少支撑</strong>：调整模型方向，使用树形支撑</li>
-            <li><strong>正确打印</strong>：减少失败率是最好的节约</li>
-            <li><strong>批量打印</strong>：一次打印多个模型减少浪费</li>
-          </ul>
-          <h3>环保材料选择</h3>
-          <ul>
-            <li>PLA 是可生物降解的材料</li>
-            <li>选择可回收包装的品牌</li>
-          </ul>
-        `,
-        faq: [
-          { q: 'PLA 真的环保吗？', a: 'PLA 来自可再生资源，比石油基塑料更环保。但需要工业堆肥条件才能完全降解。' },
-          { q: '支持结构可以重复使用吗？', a: '通常不可以。但可以使用可溶解的支撑材料。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何减少打印浪费？', a: 'Next - 即将更新' }]
       }
     ]
   },
@@ -584,136 +569,57 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase4-ep01',
-        title: '切片入门：3D 打印机如何知道打印什么？',
+        title: 'Slicing 101: How does a 3D printer know what to print?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `
-          <h2>切片软件入门</h2>
-          <h3>什么是切片？</h3>
-          <p>切片软件将 3D 模型（STL/OBJ）转换为打印机可以理解的指令（G-code）。</p>
-          <h3>主流切片软件</h3>
-          <table>
-            <tr><th>软件</th><th>特点</th><th>适合</th></tr>
-            <tr><td>Bambu Studio</td><td>Bambu Lab 官方，功能强大</td><td>Bambu 打印机用户</td></tr>
-            <tr><td>PrusaSlicer</td><td>免费开源，社区活跃</td><td>所有打印机</td></tr>
-            <tr><td>Cura</td><td>最流行，插件丰富</td><td>Ultimaker 和其他</td></tr>
-          </table>
-          <h3>切片基本流程</h3>
-          <ol>
-            <li>导入 STL/OBJ 模型</li>
-            <li>选择打印机和材料配置</li>
-            <li>调整打印参数</li>
-            <li>切片生成预览</li>
-            <li>导出 G-code 或发送到打印机</li>
-          </ol>
-        `,
-        faq: [
-          { q: '切片软件需要学习很久吗？', a: '基础操作很简单，但精通需要时间。建议从默认设置开始，逐步学习高级功能。' },
-          { q: '不同切片软件生成的结果一样吗？', a: '不一样。每个软件的切片算法不同，结果可能有差异。建议选择一个深入学习。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '什么是切片？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase4-ep02',
-        title: '配置调优：如何设置切片软件获得最佳效果？',
+        title: 'Profile Tuning: How to Set Up 3D Printing Slicer for the Best Results?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `
-          <h2>切片配置详解</h2>
-          <h3>关键参数</h3>
-          <table>
-            <tr><th>参数</th><th>说明</th><th>推荐值</th></tr>
-            <tr><td>层高</td><td>每层厚度</td><td>0.2mm（平衡质量和速度）</td></tr>
-            <tr><td>填充率</td><td>内部填充密度</td><td>15-30%</td></tr>
-            <tr><td>壁厚</td><td>外壁层数</td><td>2-3 层或 0.8-1.2mm</td></tr>
-            <tr><td>打印速度</td><td>打印移动速度</td><td>50-100 mm/s</td></tr>
-          </table>
-          <h3>质量 vs 速度</h3>
-          <ul>
-            <li><strong>高质量</strong>：低层高（0.1-0.15mm）、慢速、高填充</li>
-            <li><strong>快速</strong>：高层高（0.3mm）、快速、低填充</li>
-            <li><strong>平衡</strong>：0.2mm 层高、中等速度、20% 填充</li>
-          </ul>
-        `,
-        faq: [
-          { q: '如何保存自定义配置？', a: '大多数切片软件支持保存配置文件或创建配置预设。' },
-          { q: '不同模型需要不同配置吗？', a: '是的。大型模型可能需要更高填充，精细模型需要更低层高。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何优化切片设置？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase4-ep03',
-        title: '支撑结构：如何为复杂模型添加支撑？',
+        title: 'Support Structures: How to build support for complex, floating models?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `
-          <h2>支撑结构指南</h2>
-          <h3>什么时候需要支撑？</h3>
-          <p>当模型有悬空部分超过 45° 时，通常需要支撑。</p>
-          <h3>支撑类型</h3>
-          <table>
-            <tr><th>类型</th><th>特点</th><th>适合场景</th></tr>
-            <tr><td>普通支撑</td><td>稳定，易拆除</td><td>大多数情况</td></tr>
-            <tr><td>树形支撑</td><td>节省材料，表面更光滑</td><td>有机形状模型</td></tr>
-            <tr><td>可溶支撑</td><td>可溶解去除</td><td>复杂内部结构</td></tr>
-          </table>
-          <h3>减少支撑的技巧</h3>
-          <ul>
-            <li>调整模型打印方向</li>
-            <li>设计时考虑打印方向</li>
-            <li>使用"桥接"功能</li>
-          </ul>
-        `,
-        faq: [
-          { q: '支撑很难拆除怎么办？', a: '增加 Z 距离、降低支撑密度、或使用树形支撑。' },
-          { q: '支撑会留下痕迹吗？', a: '会有一些。可以通过打磨、调整设置或使用可溶支撑来减少。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何添加支撑？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase4-ep04',
-        title: '切片软件多色：如何在切片中为模型上色？',
+        title: 'Multi-Color in Slicer: How to Paint Your 3D Models?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `<h2>切片软件多色打印</h2><p>Next - 详细内容即将更新</p>`,
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
         faq: [{ q: '如何在切片软件中添加多色？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase4-ep05',
-        title: '多色打印：如何将 Meshy 纹理模型变成多色打印？',
+        title: 'Multi-Color Printing: How to Turn a Meshy Textured Model into a Multi-Color 3D Print?',
         author: 'Molly (Yihan) Sun',
         points: 30,
         skillBonus: 5,
-        content: `<h2>Meshy 模型多色打印</h2><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: 'Meshy 纹理可以直接打印吗？', a: 'Next - 即将更新' }]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何打印多色模型？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase4-ep06',
-        title: '切片技巧：变层高、熨烫、毛绒皮肤、隐藏接缝',
+        title: 'Slicing Tips: How to use Variable layer height, Ironing, Fuzzy skin, and Hide seams?',
         author: 'Joanne (Xuanmeng) Wang',
         points: 30,
         skillBonus: 5,
-        content: `
-          <h2>高级切片技巧</h2>
-          <h3>变层高 (Variable Layer Height)</h3>
-          <p>在平坦区域使用高层高加速打印，在细节区域使用低层高保持质量。</p>
-          <h3>熨烫 (Ironing)</h3>
-          <p>在顶层表面进行额外的熨烫，使表面更光滑。</p>
-          <h3>毛绒皮肤 (Fuzzy Skin)</h3>
-          <p>在表面添加随机纹理，隐藏层纹或创造特殊效果。</p>
-          <h3>隐藏接缝</h3>
-          <table>
-            <tr><th>方法</th><th>效果</th></tr>
-            <tr><td>随机起点</td><td>接缝随机分布</td></tr>
-            <tr><td>对齐接缝</td><td>接缝在一条线上</td></tr>
-            <tr><td>后角</td><td>接缝隐藏在角落</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: '这些技巧会影响打印时间吗？', a: '是的。熨烫会增加时间，变层高可以减少时间。' },
-          { q: '哪个技巧最有用？', a: '变层高最实用，可以在不牺牲质量的情况下加速打印。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '有哪些高级切片技巧？', a: 'Next - 即将更新' }]
       }
     ]
   },
@@ -726,177 +632,75 @@ const PHASES = {
     tutorials: [
       {
         id: 'phase5-ep01',
-        title: '首层不均匀：如何修复首层粘贴或接触面积问题？',
+        title: 'Uneven First Layer - Fixing failed prints due to poor first-layer stick or small contact area',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `
-          <h2>首层问题排查</h2>
-          <h3>常见首层问题</h3>
-          <table>
-            <tr><th>问题</th><th>原因</th><th>解决</th></tr>
-            <tr><td>首层太薄</td><td>喷嘴太近</td><td>调高 Z-offset</td></tr>
-            <tr><td>首层翘起</td><td>喷嘴太远/热床脏</td><td>调低 Z-offset，清洁热床</td></tr>
-            <tr><td>首层线条分离</td><td>温度太低/速度太快</td><td>提高温度，降低首层速度</td></tr>
-          </table>
-          <h3>Z-Offset 调整方法</h3>
-          <p>使用"纸张测试法"：喷嘴与热床之间应该刚好能通过一张纸。</p>
-          <h3>小接触面积模型技巧</h3>
-          <ul>
-            <li>添加 Brim（帽檐）增加接触面积</li>
-            <li>使用胶棒或胶水增强附着力</li>
-            <li>降低首层速度</li>
-          </ul>
-        `,
-        faq: [
-          { q: '每次打印都要调平吗？', a: '如果打印机有自动调平，通常不需要。但建议定期检查。' },
-          { q: '什么是"纸张测试"？', a: '将一张纸放在热床上，调整喷嘴高度直到纸张刚好能滑动但有轻微阻力。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '首层问题如何解决？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep02',
-        title: '模型细节太细：如何修复脆弱或细小部件？',
+        title: 'Model Detail Too Thin - Fixing failed prints due to Fragile or Tiny Parts',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `
-          <h2>细小部件问题</h2>
-          <h3>解决方案</h3>
-          <table>
-            <tr><th>方法</th><th>说明</th></tr>
-            <tr><td>放大模型</td><td>如果尺寸允许，打印更大的版本</td></tr>
-            <tr><td>降低层高</td><td>0.1-0.12mm 层高可以更好地捕捉细节</td></tr>
-            <tr><td>使用更小喷嘴</td><td>0.25mm 或 0.3mm 喷嘴</td></tr>
-            <tr><td>降低打印速度</td><td>细小部件需要更慢的速度</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: '什么是可打印的最小细节？', a: '通常为喷嘴直径的 2-3 倍。0.4mm 喷嘴最小约 0.8-1.2mm。' },
-          { q: '树脂打印更适合细节吗？', a: '是的。树脂打印可以达到更高的精度，适合精细模型。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '细节太细怎么办？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep03',
-        title: '模型缺乏细节：打印效果不如 3D 预览？',
+        title: 'The model lacks detail - The physical print does not look as detailed as the 3D view',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `<h2>细节丢失问题</h2><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '为什么打印效果不如屏幕显示？', a: 'Next - 即将更新' }]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '打印效果不如预期？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep04',
-        title: '薄壁问题：如何处理模型薄壁？',
+        title: 'Thin Wall - How to handle thin wall issues',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 5,
-        content: `<h2>薄壁问题处理</h2><p>Next - 详细内容即将更新</p>`,
-        faq: [{ q: '什么是薄壁？', a: 'Next - 即将更新' }]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '薄壁问题如何解决？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep05',
-        title: '视觉失败图库：对照照片找到解决方案',
+        title: 'The Visual Fail Gallery - Match your "spaghetti" to our photo guide to find the fix',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 0,
-        content: `
-          <h2>常见打印失败诊断</h2>
-          <table>
-            <tr><th>现象</th><th>名称</th><th>原因</th><th>解决</th></tr>
-            <tr><td>意大利面状乱丝</td><td>Spaghetti</td><td>模型脱离热床</td><td>检查首层附着力</td></tr>
-            <tr><td>层间分离</td><td>层裂</td><td>温度太低/层高太高</td><td>提高温度，降低层高</td></tr>
-            <tr><td>表面有洞</td><td>孔洞</td><td>挤出不足</td><td>检查挤出机，增加流量</td></tr>
-            <tr><td>顶部没封住</td><td>顶层孔洞</td><td>填充太低/顶层层数不够</td><td>增加顶层层数</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: '打印失败了可以恢复吗？', a: '大多数情况下不行。但可以记录失败高度，从头重新打印。' },
-          { q: '如何避免长时间打印失败？', a: '先用低质量快速打印一遍测试，确认没问题再用高质量打印。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '打印失败对照图？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep06',
-        title: '热床附着与调平：掌握"纸张测试"和完美首层',
+        title: 'Bed Adhesion & Leveling - Mastering the "Paper Test" and the perfect first layer',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 0,
-        content: `
-          <h2>热床调平指南</h2>
-          <h3>手动调平步骤</h3>
-          <ol>
-            <li>预热打印机（喷嘴和热床到打印温度）</li>
-            <li>禁用步进电机，移动打印头到四个角</li>
-            <li>在每个角使用纸张测试</li>
-            <li>调整旋钮直到纸张刚好能通过</li>
-          </ol>
-          <h3>纸张测试详解</h3>
-          <ul>
-            <li><strong>太松</strong>：纸张轻松通过 → 喷嘴太高</li>
-            <li><strong>刚好</strong>：纸张有轻微阻力但能通过 → 完美</li>
-            <li><strong>太紧</strong>：纸张无法通过或撕裂 → 喷嘴太低</li>
-          </ul>
-        `,
-        faq: [
-          { q: '多久需要调平一次？', a: '手动调平的机器建议每次打印前检查。自动调平的机器通常可以打印多次后才需要检查。' },
-          { q: '热床应该用什么温度？', a: 'PLA: 50-60°C, PETG: 70-80°C, ABS: 100-110°C。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何调平热床？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep07',
-        title: '对抗拉丝：如何消除拉丝、渗漏和斑点？',
+        title: 'Fighting the Frizz - How to eliminate stringing, oozing, and blobs',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 0,
-        content: `
-          <h2>拉丝问题解决</h2>
-          <h3>解决方案</h3>
-          <table>
-            <tr><th>设置</th><th>调整建议</th></tr>
-            <tr><td>回抽距离</td><td>增加 0.5-1mm</td></tr>
-            <tr><td>回抽速度</td><td>30-50 mm/s</td></tr>
-            <tr><td>移动速度</td><td>提高移动速度</td></tr>
-            <tr><td>温度</td><td>降低 5-10°C</td></tr>
-          </table>
-        `,
-        faq: [
-          { q: 'PETG 拉丝严重怎么办？', a: 'PETG 比 PLA 更容易拉丝。增加回抽距离和速度，降低温度，启用擦拭。' },
-          { q: '拉丝可以后期处理吗？', a: '可以用热风枪轻轻吹，或用剪刀/刀具修剪。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何消除拉丝？', a: 'Next - 即将更新' }]
       },
       {
         id: 'phase5-ep08',
-        title: '喷嘴堵塞手术："冷拉"法和喷嘴更换指南',
+        title: 'Clog Surgery - The "Cold Pull" method and nozzle replacement guide',
         author: 'Tony (Yuchen) Liu',
         points: 40,
         skillBonus: 0,
-        content: `
-          <h2>喷嘴堵塞处理</h2>
-          <h3>堵塞症状</h3>
-          <ul>
-            <li>耗材不出或出料断断续续</li>
-            <li>打印有空洞</li>
-            <li>挤出电机发出"咔咔"声</li>
-          </ul>
-          <h3>冷拉法 (Cold Pull)</h3>
-          <ol>
-            <li>加热喷嘴到打印温度</li>
-            <li>插入耗材，手动推进</li>
-            <li>冷却到 90-100°C（PLA）</li>
-            <li>快速用力拉出耗材</li>
-            <li>重复直到干净</li>
-          </ol>
-          <h3>更换喷嘴</h3>
-          <ol>
-            <li>加热到打印温度</li>
-            <li>使用扳手逆时针拧下旧喷嘴</li>
-            <li>安装新喷嘴</li>
-            <li>重新调平</li>
-          </ol>
-        `,
-        faq: [
-          { q: '多久需要更换喷嘴？', a: '普通使用 3-6 个月。打印 abrasive 材料需要更频繁更换。' },
-          { q: '喷嘴大小有什么影响？', a: '小喷嘴精度高但速度慢。大喷嘴速度快但精度低。0.4mm 是最常用的平衡选择。' }
-        ]
+        content: `<p class="update-date">Last Updated: Feb 2026</p><p>Next - 详细内容即将更新</p>`,
+        faq: [{ q: '如何清理喷嘴堵塞？', a: 'Next - 即将更新' }]
       }
     ]
   }
