@@ -191,7 +191,8 @@ const UI = {
           id: phase.tutorials[i].id,
           phaseId: phaseId,
           title: phase.tutorials[i].title,
-          shortTitle: phase.tutorials[i].shortTitle
+          shortTitle: phase.tutorials[i].shortTitle,
+          isLastInPhase: i === phase.tutorials.length - 1
         });
         if (phase.tutorials[i].id === tutorialId) {
           currentIndex = allTutorials.length - 1;
@@ -199,9 +200,13 @@ const UI = {
       }
     }
     
+    const current = allTutorials[currentIndex];
+    const nextTutorial = currentIndex < allTutorials.length - 1 ? allTutorials[currentIndex + 1] : null;
+    
     return {
       prev: currentIndex > 0 ? allTutorials[currentIndex - 1] : null,
-      next: currentIndex < allTutorials.length - 1 ? allTutorials[currentIndex + 1] : null
+      next: nextTutorial && !current.isLastInPhase ? nextTutorial : null,
+      isLastInPhase: current ? current.isLastInPhase : false
     };
   },
 
@@ -282,10 +287,10 @@ const UI = {
       `;
     } else {
       navButtons += `
-        <button class="btn btn-nav btn-next" onclick="UI.completeAndReturn('${tutorialId}', '${phaseId}')">
+        <button class="btn btn-nav btn-next" onclick="UI.completePhase('${tutorialId}', '${phaseId}')">
           <span class="nav-text">
-            <span class="nav-label">Complete</span>
-            <span class="nav-title">Back to ${phase.title}</span>
+            <span class="nav-label">Complete Phase</span>
+            <span class="nav-title">${phase.icon} ${phase.title}</span>
           </span>
           <span class="nav-arrow">✓</span>
         </button>
@@ -329,13 +334,11 @@ const UI = {
 
   goToNextTutorial(currentId, nextId) {
     let tutorial = null;
-    let phaseId = null;
     
     for (const pid of Object.keys(PHASES)) {
       const found = PHASES[pid].tutorials.find(t => t.id === currentId);
       if (found) {
         tutorial = found;
-        phaseId = pid;
         break;
       }
     }
@@ -345,14 +348,10 @@ const UI = {
       this.updateHeader();
     }
     
-    if (phaseId && progressManager.isPhaseCompleted(phaseId)) {
-      this.showPhaseCompleteModal(phaseId);
-    } else {
-      router.navigate(`/tutorial/${nextId}`);
-    }
+    router.navigate(`/tutorial/${nextId}`);
   },
 
-  completeAndReturn(tutorialId, phaseId) {
+  completePhase(tutorialId, phaseId) {
     let tutorial = null;
     for (const pid of Object.keys(PHASES)) {
       const found = PHASES[pid].tutorials.find(t => t.id === tutorialId);
@@ -367,11 +366,7 @@ const UI = {
       this.updateHeader();
     }
     
-    if (progressManager.isPhaseCompleted(phaseId)) {
-      this.showPhaseCompleteModal(phaseId);
-    } else {
-      router.navigate(`/phase/${phaseId}`);
-    }
+    this.showPhaseCompleteModal(phaseId);
   },
 
   showPhaseCompleteModal(phaseId) {
@@ -383,22 +378,13 @@ const UI = {
       modal.innerHTML = `
         <div class="phase-complete-modal" onclick="UI.closeModal(event)">
           <div class="phase-complete-content" onclick="event.stopPropagation()">
-            <div class="medal-container">
-              <div class="medal" style="--medal-color: ${medal.color}">
-                <div class="medal-outer"></div>
-                <div class="medal-inner">
-                  <span class="medal-icon">${medal.icon}</span>
-                </div>
-                <div class="medal-ribbon left"></div>
-                <div class="medal-ribbon right"></div>
-              </div>
+            <div class="medal-circle" style="background: ${medal.color}">
+              <span class="medal-emoji">${medal.icon}</span>
             </div>
             <h2 class="phase-complete-title">Congratulations!</h2>
-            <p class="phase-complete-subtitle">You've completed</p>
-            <p class="phase-complete-phase">${phase.icon} ${phase.title}</p>
-            <p class="phase-complete-medal">You earned the ${medal.name} Medal!</p>
+            <p class="phase-complete-text">You've completed ${phase.icon} ${phase.title}</p>
             <button class="btn btn-primary btn-large" onclick="UI.returnHomeFromModal()">
-              Back to Home
+              Back
             </button>
           </div>
         </div>

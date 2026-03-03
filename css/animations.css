@@ -14,7 +14,7 @@
   border-radius: 24px;
   padding: 48px;
   text-align: center;
-  max-width: 420px;
+  max-width: 360px;
   width: 100%;
   animation: modalSlideIn 0.4s ease-out;
 }
@@ -30,127 +30,59 @@
   }
 }
 
-.medal-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-
-.medal {
-  position: relative;
+.medal-circle {
   width: 120px;
-  height: 140px;
-  animation: medalBounce 0.6s ease-out 0.2s both;
-}
-
-@keyframes medalBounce {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) translateY(-50px);
-  }
-  50% {
-    transform: scale(1.1) translateY(10px);
-  }
-  70% {
-    transform: scale(0.9) translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.medal-outer {
-  position: absolute;
-  width: 100px;
-  height: 100px;
+  height: 120px;
   border-radius: 50%;
-  background: var(--medal-color, #FFD700);
-  top: 0;
-  left: 10px;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.4),
-    inset 0 -4px 10px rgba(0, 0, 0, 0.3),
-    inset 0 4px 10px rgba(255, 255, 255, 0.3);
-}
-
-.medal-inner {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    var(--medal-color, #FFD700) 50%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-  top: 10px;
-  left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.4);
+  margin: 0 auto 24px;
+  animation: medalPop 0.5s ease-out 0.2s both;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.2),
+    inset 0 4px 10px rgba(255, 255, 255, 0.3);
 }
 
-.medal-icon {
-  font-size: 36px;
+@keyframes medalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.medal-emoji {
+  font-size: 48px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.medal-ribbon {
-  position: absolute;
-  width: 20px;
-  height: 50px;
-  top: 85px;
-  background: linear-gradient(180deg, #E74C3C 0%, #C0392B 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
-}
-
-.medal-ribbon.left {
-  left: 25px;
-  transform: rotate(-10deg);
-}
-
-.medal-ribbon.right {
-  right: 25px;
-  transform: rotate(10deg);
-}
-
 .phase-complete-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 8px;
-  animation: fadeInUp 0.5s ease-out 0.4s both;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.4s ease-out 0.4s both;
 }
 
-.phase-complete-subtitle {
+.phase-complete-text {
   font-size: 16px;
   color: var(--text-secondary);
-  margin-bottom: 4px;
-  animation: fadeInUp 0.5s ease-out 0.5s both;
-}
-
-.phase-complete-phase {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 16px;
-  animation: fadeInUp 0.5s ease-out 0.6s both;
-}
-
-.phase-complete-medal {
-  font-size: 18px;
-  color: var(--text-secondary);
   margin-bottom: 32px;
-  animation: fadeInUp 0.5s ease-out 0.7s both;
+  animation: fadeInUp 0.4s ease-out 0.5s both;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -162,9 +94,16 @@
   background: var(--primary);
   color: white;
   border: none;
-  animation: fadeInUp 0.5s ease-out 0.8s both;
+  animation: fadeInUp 0.4s ease-out 0.6s both;
+  padding: 14px 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
 }
