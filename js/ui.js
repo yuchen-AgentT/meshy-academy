@@ -263,6 +263,22 @@ const UI = {
       `;
     }
     
+    let imagesSection = '';
+    if (tutorial.images && tutorial.images.length > 0) {
+      const imageItems = tutorial.images.map((img, index) => `
+        <img src="${img}" alt="Tutorial image ${index + 1}" class="tutorial-image" onclick="UI.openImageModal('${img}')">
+      `).join('');
+      
+      imagesSection = `
+        <div class="images-section">
+          <h3 class="images-title">📷 Images</h3>
+          <div class="images-grid">
+            ${imageItems}
+          </div>
+        </div>
+      `;
+    }
+    
     let navButtons = '<div class="tutorial-nav-buttons">';
     
     if (adjacent.prev) {
@@ -321,6 +337,8 @@ const UI = {
           <div class="tutorial-body">
             ${tutorial.content}
           </div>
+          
+          ${imagesSection}
           
           ${faqSection}
           
@@ -493,6 +511,19 @@ const UI = {
     const answer = document.getElementById(`faq-${index}`);
     if (answer) {
       answer.classList.toggle('open');
+    }
+  },
+
+  openImageModal(src) {
+    const modal = document.getElementById('modal');
+    if (modal) {
+      modal.innerHTML = `
+        <div class="image-modal" onclick="UI.closeModal(event)">
+          <img src="${src}" alt="Full size image" onclick="event.stopPropagation()">
+          <button class="btn btn-close" onclick="UI.closeModal()">✕</button>
+        </div>
+      `;
+      modal.classList.add('active');
     }
   },
 
