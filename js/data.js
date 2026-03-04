@@ -531,7 +531,7 @@ const PHASES = {
         shortTitle: '[Phase 3 EP01]',
         title: 'Why 90% of Your Prints Should Start With PLA Basic or PLA Matte?',
         author: 'Weihan Yang',
-        images: ['assets/images/phase3-ep01/image_01.png', 'assets/images/phase3-ep01/image_02.png'],
+        images: ['assets/images/phase3-ep01/image_01.jpg', 'assets/images/phase3-ep01/image_02.jpg'],
         points: 30,
         skillBonus: 0,
         content: `
@@ -571,7 +571,7 @@ const PHASES = {
         shortTitle: '[Phase 3 EP02]',
         title: 'Speciality PLA Filament: How Do I Print PLA Silk, Marble, Wood, and Glow-in-the-Dark?',
         author: 'Weihan Yang',
-        images: ['assets/images/phase3-ep02/image_01.png'],
+        images: ['assets/images/phase3-ep02/image_01.jpg'],
         points: 30,
         skillBonus: 0,
         content: `
@@ -618,7 +618,7 @@ const PHASES = {
         shortTitle: '[Phase 3 EP03]',
         title: 'When Should I Switch from PLA to PETG for 3D Printing?',
         author: 'Weihan Yang',
-        images: ['assets/images/phase3-ep03/image_01.png', 'assets/images/phase3-ep03/image_02.png'],
+        images: ['assets/images/phase3-ep03/image_01.jpg', 'assets/images/phase3-ep03/image_02.jpg'],
         points: 30,
         skillBonus: 0,
         content: `
@@ -653,7 +653,7 @@ const PHASES = {
         shortTitle: '[Phase 3 EP04]',
         title: 'How Do I Dry Wet 3D Printing Filament and Prevent Moisture Damage?',
         author: 'Weihan Yang',
-        images: ['assets/images/phase3-ep04/image_01.png'],
+        images: ['assets/images/phase3-ep04/image_01.jpg'],
         points: 30,
         skillBonus: 0,
         content: `
@@ -696,7 +696,7 @@ const PHASES = {
         shortTitle: '[Phase 3 EP05]',
         title: 'How Can I Reduce 3D Printing Waste and Print More Sustainably?',
         author: 'Weihan Yang',
-        images: ['assets/images/phase3-ep05/image_01.png'],
+        images: ['assets/images/phase3-ep05/image_01.jpg'],
         points: 30,
         skillBonus: 0,
         content: `
@@ -746,7 +746,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP01]',
         title: 'Slicing 101: How does a 3D printer know what to print?',
         author: 'Joanne (Xuanmeng) Wang',
-        images: ['assets/images/phase4-ep01/image_01.png', 'assets/images/phase4-ep01/image_02.png', 'assets/images/phase4-ep01/image_03.png', 'assets/images/phase4-ep01/image_04.png', 'assets/images/phase4-ep01/image_05.png', 'assets/images/phase4-ep01/image_06.png', 'assets/images/phase4-ep01/image_07.png', 'assets/images/phase4-ep01/image_08.png', 'assets/images/phase4-ep01/image_09.png', 'assets/images/phase4-ep01/image_10.png'],
+        images: ['assets/images/phase4-ep01/image_01.jpg', 'assets/images/phase4-ep01/image_02.jpg', 'assets/images/phase4-ep01/image_03.jpg', 'assets/images/phase4-ep01/image_04.jpg', 'assets/images/phase4-ep01/image_05.jpg', 'assets/images/phase4-ep01/image_06.jpg', 'assets/images/phase4-ep01/image_07.jpg', 'assets/images/phase4-ep01/image_08.jpg', 'assets/images/phase4-ep01/image_09.jpg', 'assets/images/phase4-ep01/image_10.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -784,7 +784,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP02]',
         title: 'Profile Tuning: How to Set Up 3D Printing Slicer for the Best Results?',
         author: 'Molly (Yihan) Sun',
-        images: ['assets/images/phase4-ep02/image_01.png', 'assets/images/phase4-ep02/image_02.png', 'assets/images/phase4-ep02/image_03.png', 'assets/images/phase4-ep02/image_04.png', 'assets/images/phase4-ep02/image_05.png', 'assets/images/phase4-ep02/image_06.png', 'assets/images/phase4-ep02/image_07.png', 'assets/images/phase4-ep02/image_08.png', 'assets/images/phase4-ep02/image_09.png', 'assets/images/phase4-ep02/image_10.png'],
+        images: ['assets/images/phase4-ep02/image_01.jpg', 'assets/images/phase4-ep02/image_02.jpg', 'assets/images/phase4-ep02/image_03.jpg', 'assets/images/phase4-ep02/image_04.jpg', 'assets/images/phase4-ep02/image_05.jpg', 'assets/images/phase4-ep02/image_06.jpg', 'assets/images/phase4-ep02/image_07.jpg', 'assets/images/phase4-ep02/image_08.jpg', 'assets/images/phase4-ep02/image_09.jpg', 'assets/images/phase4-ep02/image_10.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -842,7 +842,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP03]',
         title: 'Support Structures: How to build support for complex, floating models?',
         author: 'Joanne (Xuanmeng) Wang',
-        images: ['assets/images/phase4-ep03/image_01.jpeg', 'assets/images/phase4-ep03/image_02.jpeg', 'assets/images/phase4-ep03/image_03.jpeg', 'assets/images/phase4-ep03/image_04.png', 'assets/images/phase4-ep03/image_05.png', 'assets/images/phase4-ep03/image_06.jpeg', 'assets/images/phase4-ep03/image_07.jpeg', 'assets/images/phase4-ep03/image_08.png', 'assets/images/phase4-ep03/image_09.png', 'assets/images/phase4-ep03/image_10.png', 'assets/images/phase4-ep03/image_11.png', 'assets/images/phase4-ep03/image_12.png', 'assets/images/phase4-ep03/image_13.png', 'assets/images/phase4-ep03/image_14.png', 'assets/images/phase4-ep03/image_15.png', 'assets/images/phase4-ep03/image_16.png'],
+        images: ['assets/images/phase4-ep03/image_01.jpg', 'assets/images/phase4-ep03/image_02.jpg', 'assets/images/phase4-ep03/image_03.jpg', 'assets/images/phase4-ep03/image_04.jpg', 'assets/images/phase4-ep03/image_05.jpg', 'assets/images/phase4-ep03/image_06.jpg', 'assets/images/phase4-ep03/image_07.jpg', 'assets/images/phase4-ep03/image_08.jpg', 'assets/images/phase4-ep03/image_09.jpg', 'assets/images/phase4-ep03/image_10.jpg', 'assets/images/phase4-ep03/image_11.jpg', 'assets/images/phase4-ep03/image_12.jpg', 'assets/images/phase4-ep03/image_13.jpg', 'assets/images/phase4-ep03/image_14.jpg', 'assets/images/phase4-ep03/image_15.jpg', 'assets/images/phase4-ep03/image_16.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -902,7 +902,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP04]',
         title: 'Multi-Color in Slicer: How to Paint Your 3D Models?',
         author: 'Molly (Yihan) Sun',
-        images: ['assets/images/phase4-ep04/image_01.png', 'assets/images/phase4-ep04/image_02.png', 'assets/images/phase4-ep04/image_03.png', 'assets/images/phase4-ep04/image_04.gif', 'assets/images/phase4-ep04/image_05.gif', 'assets/images/phase4-ep04/image_06.gif', 'assets/images/phase4-ep04/image_07.gif', 'assets/images/phase4-ep04/image_08.gif', 'assets/images/phase4-ep04/image_09.gif', 'assets/images/phase4-ep04/image_10.gif', 'assets/images/phase4-ep04/image_11.gif', 'assets/images/phase4-ep04/image_12.png'],
+        images: ['assets/images/phase4-ep04/image_01.jpg', 'assets/images/phase4-ep04/image_02.jpg', 'assets/images/phase4-ep04/image_03.jpg', 'assets/images/phase4-ep04/image_04.jpg', 'assets/images/phase4-ep04/image_05.jpg', 'assets/images/phase4-ep04/image_06.jpg', 'assets/images/phase4-ep04/image_07.jpg', 'assets/images/phase4-ep04/image_08.jpg', 'assets/images/phase4-ep04/image_09.jpg', 'assets/images/phase4-ep04/image_10.jpg', 'assets/images/phase4-ep04/image_11.jpg', 'assets/images/phase4-ep04/image_12.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -942,7 +942,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP05]',
         title: 'Multi-Color Printing: How to Turn a Meshy Textured Model into a Multi-Color 3D Print?',
         author: 'Molly (Yihan) Sun',
-        images: ['assets/images/phase4-ep05/image_01.png', 'assets/images/phase4-ep05/image_02.png', 'assets/images/phase4-ep05/image_03.png', 'assets/images/phase4-ep05/image_04.png', 'assets/images/phase4-ep05/image_05.png', 'assets/images/phase4-ep05/image_06.png', 'assets/images/phase4-ep05/image_07.png'],
+        images: ['assets/images/phase4-ep05/image_01.jpg', 'assets/images/phase4-ep05/image_02.jpg', 'assets/images/phase4-ep05/image_03.jpg', 'assets/images/phase4-ep05/image_04.jpg', 'assets/images/phase4-ep05/image_05.jpg', 'assets/images/phase4-ep05/image_06.jpg', 'assets/images/phase4-ep05/image_07.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -978,7 +978,7 @@ const PHASES = {
         shortTitle: '[Phase 4 EP06]',
         title: 'Slicing Tips: How to use Variable layer height, Ironing, Fuzzy skin, and Hide seams?',
         author: 'Joanne (Xuanmeng) Wang',
-        images: ['assets/images/phase4-ep06/image_01.png', 'assets/images/phase4-ep06/image_02.png', 'assets/images/phase4-ep06/image_03.png', 'assets/images/phase4-ep06/image_04.png', 'assets/images/phase4-ep06/image_05.png', 'assets/images/phase4-ep06/image_06.png', 'assets/images/phase4-ep06/image_07.png', 'assets/images/phase4-ep06/image_08.png', 'assets/images/phase4-ep06/image_09.jpeg', 'assets/images/phase4-ep06/image_10.png', 'assets/images/phase4-ep06/image_11.png', 'assets/images/phase4-ep06/image_12.png', 'assets/images/phase4-ep06/image_13.png', 'assets/images/phase4-ep06/image_14.png', 'assets/images/phase4-ep06/image_15.png', 'assets/images/phase4-ep06/image_16.png'],
+        images: ['assets/images/phase4-ep06/image_01.jpg', 'assets/images/phase4-ep06/image_02.jpg', 'assets/images/phase4-ep06/image_03.jpg', 'assets/images/phase4-ep06/image_04.jpg', 'assets/images/phase4-ep06/image_05.jpg', 'assets/images/phase4-ep06/image_06.jpg', 'assets/images/phase4-ep06/image_07.jpg', 'assets/images/phase4-ep06/image_08.jpg', 'assets/images/phase4-ep06/image_09.jpg', 'assets/images/phase4-ep06/image_10.jpg', 'assets/images/phase4-ep06/image_11.jpg', 'assets/images/phase4-ep06/image_12.jpg', 'assets/images/phase4-ep06/image_13.jpg', 'assets/images/phase4-ep06/image_14.jpg', 'assets/images/phase4-ep06/image_15.jpg', 'assets/images/phase4-ep06/image_16.jpg'],
         points: 30,
         skillBonus: 5,
         content: `
@@ -1044,7 +1044,7 @@ const PHASES = {
         shortTitle: '[Phase 5 EP01]',
         title: 'Uneven First Layer - Fixing failed prints due to poor first-layer stick or small contact area',
         author: 'Tony (Yuchen) Liu',
-        images: ['assets/images/phase5-ep01/image_01.png', 'assets/images/phase5-ep01/image_02.png', 'assets/images/phase5-ep01/image_03.png', 'assets/images/phase5-ep01/image_04.png', 'assets/images/phase5-ep01/image_05.png', 'assets/images/phase5-ep01/image_06.png', 'assets/images/phase5-ep01/image_07.png', 'assets/images/phase5-ep01/image_08.png', 'assets/images/phase5-ep01/image_09.png', 'assets/images/phase5-ep01/image_10.png', 'assets/images/phase5-ep01/image_11.png'],
+        images: ['assets/images/phase5-ep01/image_01.jpg', 'assets/images/phase5-ep01/image_02.jpg', 'assets/images/phase5-ep01/image_03.jpg', 'assets/images/phase5-ep01/image_04.jpg', 'assets/images/phase5-ep01/image_05.jpg', 'assets/images/phase5-ep01/image_06.jpg', 'assets/images/phase5-ep01/image_07.jpg', 'assets/images/phase5-ep01/image_08.jpg', 'assets/images/phase5-ep01/image_09.jpg', 'assets/images/phase5-ep01/image_10.jpg', 'assets/images/phase5-ep01/image_11.jpg'],
         points: 40,
         skillBonus: 5,
         content: `
@@ -1082,7 +1082,7 @@ const PHASES = {
         shortTitle: '[Phase 5 EP02]',
         title: 'Model Detail Too Thin - Fixing failed prints due to Fragile or Tiny Parts',
         author: 'Tony (Yuchen) Liu',
-        images: ['assets/images/phase5-ep02/image_01.png', 'assets/images/phase5-ep02/image_02.png', 'assets/images/phase5-ep02/image_03.png', 'assets/images/phase5-ep02/image_04.png', 'assets/images/phase5-ep02/image_05.png', 'assets/images/phase5-ep02/image_06.png', 'assets/images/phase5-ep02/image_07.png', 'assets/images/phase5-ep02/image_08.png', 'assets/images/phase5-ep02/image_09.png'],
+        images: ['assets/images/phase5-ep02/image_01.jpg', 'assets/images/phase5-ep02/image_02.jpg', 'assets/images/phase5-ep02/image_03.jpg', 'assets/images/phase5-ep02/image_04.jpg', 'assets/images/phase5-ep02/image_05.jpg', 'assets/images/phase5-ep02/image_06.jpg', 'assets/images/phase5-ep02/image_07.jpg', 'assets/images/phase5-ep02/image_08.jpg', 'assets/images/phase5-ep02/image_09.jpg'],
         points: 40,
         skillBonus: 5,
         content: `
